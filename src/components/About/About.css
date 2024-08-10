@@ -1,21 +1,24 @@
-/* src/components/About.css */
 .about {
-    padding: 100px 20px;
-    background-color: white;
-    color: var(--primary-color);
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-}
+    text-align: center;
+    color: white;
+  }
   
-.about-title {
-    font-size: 32px;
+  .about-content {
+    padding: 40px;
+    color: black;
+    z-index: 1; /* Ensures content is above the background */
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
     margin-bottom: 20px;
-}
-
-.about-description {
-    font-size: 18px;
-    line-height: 1.6;
-}
+  }
+  
+  .about-description {
+    font-size: 1.2rem;
+  }
   
