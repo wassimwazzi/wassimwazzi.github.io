@@ -1,4 +1,20 @@
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
+    --primary-color: #fff;
+    --secondary-color: #333;
+    --highlight-color: #9380e0;
+    --background-color: #f8f9fa;
+    --border-color: #dee2e6;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --transition: 0.3s;
+    --max-width: 1200px;
+    --header-height: 60px;
+    --font-size: 16px;
+    --font-family: 'Roboto', sans-serif;
+    --line-height: 1.6;
+    --margin: 20px;
+    --padding: 20px;
+    --z-index: 1000;
+    --nav-height: 60px;
+    --nav-links: 4;
   }
