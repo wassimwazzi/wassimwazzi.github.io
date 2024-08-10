@@ -1,0 +1,25 @@
+.mobile-notice {
+    display: none; /* Hide by default */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+    font-size: 1.2rem;
+}
+  
+.mobile-notice p {
+margin: 0;
+}
+  
+/* Show the notice on mobile devices */
+@media (max-width: 768px) {
+    .mobile-notice {
+        display: block;
+    }
+}
+  
