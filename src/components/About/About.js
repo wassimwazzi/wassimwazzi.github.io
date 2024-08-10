@@ -4,7 +4,7 @@ import './About.css';
 
 const About = () => (
   <Parallax bgImage="/About.jpg" strength={500}>
-    <section id="about" className="about animated-background" style={{ backgroundImage: 'url(/About.jpg)' }}>
+    <section id="about" className="about" style={{ backgroundImage: 'url(/About.jpg)' }}>
       <div className="about-content" data-aos="fade-up">
         <h2 className="about-title">About Me</h2>
         <div className="about-description">
