@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
+import Skills from './components/Skills/Skills';
 import MobileNotice from './components/mobileNotice/Notice';
 import Experience from './components/Experience/Experience';
 import Footer from './components/Footer/Footer';
@@ -22,8 +23,9 @@ const App = () => {
       <MobileNotice />
       <main>
         <About />
-        <Projects />
         <Experience />
+        <Projects />
+        <Skills />
       </main>
       <Footer />
     </div>

@@ -1,0 +1,124 @@
+.skills {
+    position: relative;
+    color: rgb(20 36 26 / 100%);
+    text-align: center;
+    padding: 100px 20px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.skills-category {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills-category h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: rgb(78, 85, 46);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    max-width: 1000px;
+}
+
+.skills-skill {
+    flex: 1 1 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    max-width: 120px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.skills-skill {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.skills-skill .tooltip {
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the image */
+    left: 50%;
+    margin-left: -60px; /* Center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.skills-skill:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.skills-skill img {
+    width: 60px;
+    height: auto;
+}
+
+.skills-skill:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounce-odd {
+    0%, 50%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px);
+    }
+    75% {
+        transform: translateY(5px);
+    }
+}
+
+@keyframes bounce-even {
+    0%, 50%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(5px);
+    }
+    75% {
+        transform: translateY(-5px);
+    }
+}
+
+.skills-skill:nth-child(odd) {
+    animation: bounce-odd 5s infinite;
+}
+
+.skills-skill:nth-child(even) {
+    animation: bounce-even 5s infinite;
+}
