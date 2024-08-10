@@ -2,6 +2,13 @@ import React from 'react';
 import { Parallax } from 'react-parallax';
 import './About.css';
 
+const Skill = ({ img, title }) => (
+  <div className="about-skill" data-aos="fade-up">
+    <img src={img} alt={title} title={title} />
+    <div className="tooltip">{title}</div>
+  </div>
+);
+
 const About = () => (
   <Parallax bgImage="/About.jpg" strength={700}>
     <section id="about" className="about full-height">
@@ -23,103 +30,45 @@ const About = () => (
         <div className="skills-category">
           <h3>Programming Languages</h3>
           <div className="about-skills-list">
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/python.png" alt="Python" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/java.png" alt="Java" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/javascript.png" alt="JavaScript" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/sql.png" alt="SQL" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/r.png" alt="R" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/c.png" alt="c" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/ruby.png" alt="ruby" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/matlab.png" alt="matlab" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/perl.png" alt="perl" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/ocaml.png" alt="ocaml" />
-            </div>
+            <Skill img="/python.png" title="Python" />
+            <Skill img="/java.png" title="Java" />
+            <Skill img="/javascript.png" title="JavaScript" />
+            <Skill img="/sql.png" title="SQL" />
+            <Skill img="/r.png" title="R" />
+            <Skill img="/c.png" title="C" />
+            <Skill img="/ruby.png" title="Ruby" />
+            <Skill img="/matlab.png" title="Matlab" />
+            <Skill img="/perl.png" title="Perl" />
+            <Skill img="/ocaml.png" title="OCaml" />
           </div>
         </div>
         <div className="skills-category">
           <h3>Frameworks</h3>
           <div className="about-skills-list">
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/react.png" alt="React" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/node-js.png" alt="Node.js" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/django.png" alt="fjango" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/flask.png" alt="flask" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/maven.png" alt="maven" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/spring-boot.png" alt="spring-boot" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/ruby-on-rails.png" alt="ruby-on-rails" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/bootstrap.png" alt="bootstrap" />
-            </div>
+            <Skill img="/react.png" title="React" />
+            <Skill img="/node-js.png" title="Node.js" />
+            <Skill img="/django.png" title="Django" />
+            <Skill img="/flask.png" title="Flask" />
+            <Skill img="/maven.png" title="Maven" />
+            <Skill img="/spring-boot.png" title="Spring Boot" />
+            <Skill img="/ruby-on-rails.png" title="Ruby on Rails" />
+            <Skill img="/bootstrap.png" title="Bootstrap" />
           </div>
         </div>
         <div className="skills-category">
           <h3>Tools</h3>
           <div className="about-skills-list">
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/git.png" alt="Git" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/docker.png" alt="Docker" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/kubernetes.png" alt="Kubernetes" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/aws.png" alt="AWS" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/azure.png" alt="Azure" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/linux.png" alt="Linux" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/ansible.png" alt="ansible" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/grafana.png" alt="grafana" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/redis.png" alt="redis" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/splunk.png" alt="splunk" />
-            </div>
-            <div className="about-skill" data-aos="fade-up">
-              <img src="/celery.png" alt="celery" />
-            </div>
+            <Skill img="/git.png" title="Git" />
+            <Skill img="/docker.png" title="Docker" />
+            <Skill img="/kubernetes.png" title="Kubernetes" />
+            <Skill img="/aws.png" title="AWS" />
+            <Skill img="/azure.png" title="Azure" />
+            <Skill img="/linux.png" title="Linux" />
+            <Skill img="/ansible.png" title="Ansible" />
+            <Skill img="/grafana.png" title="Grafana" />
+            <Skill img="/redis.png" title="Redis" />
+            <Skill img="/splunk.png" title="Splunk" />
+            <Skill img="/celery.png" title="Celery" />
           </div>
         </div>
       </div>
