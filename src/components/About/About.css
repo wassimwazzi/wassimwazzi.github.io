@@ -179,3 +179,60 @@
 .about-skill:nth-child(even) {
   animation: bounce-even 5s infinite;
 }
+
+.about-education {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-education-item {
+  padding: 20px;
+}
+
+.about-education-item .education-item-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.about-education h3 {
+  font-size: 2rem;
+  margin: 20px;
+  color: rgb(78, 85, 46);
+}
+
+.about-education-item img {
+  width: 150px;
+  height: auto;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-education-item img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about-education-item p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-education-item:nth-child(odd) {
+  animation: slideInLeft 2s ease-in-out;
+}
+
+.about-education-item:nth-child(even) {
+  animation: slideInRight 2s ease-in-out;
+}
+
+.education-date {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--highlight-color);
+}
