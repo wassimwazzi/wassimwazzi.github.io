@@ -1,0 +1,21 @@
+/* src/components/About.css */
+.about {
+    padding: 100px 20px;
+    background-color: white;
+    color: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+  
+.about-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    font-size: 18px;
+    line-height: 1.6;
+}
+  

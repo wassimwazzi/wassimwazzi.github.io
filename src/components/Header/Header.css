@@ -1,0 +1,38 @@
+/* src/components/Header.css */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--primary-color);
+  z-index: 1000;
+}
+
+.header-title {
+  font-size: 24px;
+  color: white;
+}
+
+.header-nav .header-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header-menu li {
+  margin-left: 20px;
+}
+
+.header-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.header-menu a:hover {
+  text-decoration: underline;
+}
