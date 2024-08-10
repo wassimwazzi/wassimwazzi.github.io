@@ -1,4 +1,3 @@
-/* src/components/Experience.css */
 .experience {
     position: relative; /* Ensure positioning context for the progress bar */
     padding: 60px 20px;
@@ -48,7 +47,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: var(--highlight-color);
+    background: #bbb3dd;
     transition: left 0.4s ease;
     z-index: -1;
 }
@@ -78,8 +77,8 @@
     margin: 0;
 }
   
-.experience-details p {
-    font-size: 1rem;
+.experience-details {
+    font-size: 1.2rem;
     color: #666;
 }
   
@@ -106,12 +105,13 @@
 /* Progress bar */
 .progress-bar {
     position: absolute;
-    left: 10px; /* Adjust as needed */
+    left: -50px;
     top: 0;
-    width: 10px;
+    width: 12px;
     height: 100%;
     background: rgba(0, 0, 0, 0.1);
     z-index: 0; /* Ensure it's below other content */
+    border-radius: 10px;
 }
   
 .progress-bar-fill {
@@ -119,6 +119,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    background: var(--highlight-color);
+    background: #bbb3dd;
     transition: height 0.3s ease-in-out;
+    border-radius: 10px;
 }

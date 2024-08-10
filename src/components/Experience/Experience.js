@@ -9,21 +9,16 @@ const Experience = () => {
         const handleScroll = () => {
             const element = document.querySelector('.experience');
             const rect = element.getBoundingClientRect();
-            console.log('rect', rect);
             const height = window.innerHeight;
-            console.log('window.innerHeight', height);
             const totalHeight = rect.height;
-            console.log('rect.height', totalHeight);
 
             let amountSeen = height - rect.y;
-            console.log('amountSeen', amountSeen);
             // divide by a fraction of height so it moves with the scroll
-            amountSeen = Math.max(0, amountSeen - height / 8);
-            console.log('amountSeen', amountSeen);
+            amountSeen = amountSeen - height / 8;
 
-            const percent = Math.abs(amountSeen) / totalHeight;
-            console.log('percent', percent);
-            setScrollPercent(percent * 100);
+            let percent = (amountSeen / totalHeight) * 100;
+            percent = Math.min(100, Math.max(0, percent));
+            setScrollPercent(percent);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -39,7 +34,7 @@ const Experience = () => {
             <section className="experience">
                 <div className="experience-title" data-aos="fade-up">
                     <h2>Experience</h2>
-                    <p>Explore my journey through the various roles I've taken on.</p>
+                    {/* <p>Explore my journey through the various roles I've taken on.</p> */}
                 </div>
                 <div className="experience-list">
                     <div className="experience-item" data-aos="fade-up">
@@ -109,7 +104,7 @@ const Experience = () => {
                         <div className="experience-description">
                             <h3>Research Assistant</h3>
                             <p>
-                                Published results in the World Happiness Report
+                                Published results in the <a href='https://worldhappiness.report/ed/2022/trends-in-conceptions-of-progress-and-well-being/'>World Happiness Report</a>
                             </p>
                             <p>
                                 Researched and analyzed well-being and progress indicators to improve decision making behind socio-economic governmental policies
@@ -155,10 +150,9 @@ const Experience = () => {
                             </p>
                         </div>
                     </div>
-                </div>
-                {/* Vertical progress bar */}
-                <div className="progress-bar">
-                    <div className="progress-bar-fill" style={{ height: `${scrollPercent}%` }} />
+                    <div className="progress-bar">
+                        <div className="progress-bar-fill" style={{ height: `${scrollPercent}%` }} />
+                    </div>
                 </div>
             </section>
 
