@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <main>
         <About />
         <Projects />

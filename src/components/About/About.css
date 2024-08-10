@@ -1,24 +1,163 @@
 .about {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    color: rgb(20 36 26 / 100%);
     text-align: center;
-    color: white;
-  }
-  
-  .about-content {
-    padding: 40px;
-    color: black;
-    z-index: 1; /* Ensures content is above the background */
+    padding: 100px 20px;
+    z-index: 1;
+    overflow: hidden;
   }
   
   .about-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    color: rgb(78, 85, 46);
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    animation: fadeIn 2s ease-in-out;
   }
   
   .about-description {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 0.5s forwards;
+  }
+  
+  .about-slide-left {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    animation: slideInLeft 2s ease-in-out;
+  }
+  
+  .about-slide-right {
+    margin-top: 40px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    animation: slideInRight 2s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .about-skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  .skills-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .skills-category h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: rgb(78, 85, 46);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  
+  .about-skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .about-skill {
+    flex: 1 1 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    max-width: 120px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards; /* Fade-in effect */
+  }
+  
+  .about-skill img {
+    width: 60px;
+    height: auto;
+  }
+  
+  .about-skill p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: rgb(78, 85, 46);
+    text-transform: capitalize;
+  }
+  
+  .about-skill:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  @keyframes bounce-odd {
+    0%, 50%, 100% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-5px);
+    }
+    75% {
+      transform: translateY(5px);
+    }
+  }
+  
+  @keyframes bounce-even {
+    0%, 50%, 100% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(5px);
+    }
+    75% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  .about-skill:nth-child(odd) {
+    animation: bounce-odd 5s infinite;
+  }
+  
+  .about-skill:nth-child(even) {
+    animation: bounce-even 5s infinite;
   }
   

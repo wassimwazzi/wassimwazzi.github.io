@@ -8,7 +8,7 @@ const Projects = () => (
     strength={500}
     blur={{ min: -1, max: 3 }}
   >
-    <section id="projects" className="projects" data-aos="fade-up">
+    <section id="projects" className="projects full-height" data-aos="fade-up">
       <h2 className="projects-title">Projects</h2>
       <div className="projects-list">
         <div className="project-card" data-aos="zoom-in">

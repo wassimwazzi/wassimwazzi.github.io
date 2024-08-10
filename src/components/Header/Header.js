@@ -10,7 +10,7 @@ const Header = () => (
         <ul className="header-menu">
           <li><Link to="about" smooth={true} duration={500}>About</Link></li>
           <li><Link to="projects" smooth={true} duration={500}>Projects</Link></li>
-          <li><Link to="contact" smooth={true} duration={500}>Contact</Link></li>
+          <li><Link to="experience" smooth={true} duration={500}>Experience</Link></li>
         </ul>
       </nav>
     </div>

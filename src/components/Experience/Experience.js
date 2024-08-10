@@ -7,7 +7,7 @@ const Experience = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const element = document.querySelector('.experience');
+            const element = document.querySelector('.experience-list');
             const rect = element.getBoundingClientRect();
             const height = window.innerHeight;
             const totalHeight = rect.height;
@@ -31,7 +31,7 @@ const Experience = () => {
 
     return (
         <Parallax bgImage="/Experience.jpg" strength={500}>
-            <section className="experience">
+            <section className="experience full-height">
                 <div className="experience-title" data-aos="fade-up">
                     <h2>Experience</h2>
                     {/* <p>Explore my journey through the various roles I've taken on.</p> */}

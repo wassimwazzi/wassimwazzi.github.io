@@ -18,6 +18,9 @@ const Footer = () => (
         <p className='contact-text'>
           <a href="mailto:wassimwazzi00@gmail.com">Contact me</a>
         </p>
+        <p className='language-text'>
+          English |  Français | عربي
+        </p>
       </div>
     </div>
   </Parallax>
