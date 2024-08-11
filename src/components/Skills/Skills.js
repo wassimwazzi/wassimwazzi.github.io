@@ -51,7 +51,6 @@ const Skills = () => (
                         <Skill img="/azure.png" title="Azure" />
                         <Skill img="/linux.png" title="Linux" />
                         <Skill img="/ansible.png" title="Ansible" />
-                        <Skill img="/grafana.png" title="Grafana" />
                         <Skill img="/redis.png" title="Redis" />
                         <Skill img="/splunk.png" title="Splunk" />
                         <Skill img="/celery.png" title="Celery" />
