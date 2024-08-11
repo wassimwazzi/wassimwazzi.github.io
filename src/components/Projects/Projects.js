@@ -12,7 +12,7 @@ const Projects = () => (
       <h2 className="projects-title">Projects</h2>
       <div className="projects-list">
         <div className="project-card" data-aos="zoom-in">
-          <a href='https://github.com/wassimwazzi/Image-Restoration' target="_blank" rel="noreferrer">
+          <a href='https://github.com/wassimwazzi/Image-Restoration'>
             <div className="project-card-inner">
               <div className="project-card-front">
                 <h3>Blind Face Restoration</h3>
@@ -28,7 +28,7 @@ const Projects = () => (
           </a>
         </div>
         <div className="project-card" data-aos="zoom-in">
-          <a href='https://github.com/wassimwazzi/budget-manager-web' target="_blank" rel="noreferrer">
+          <a href='https://github.com/wassimwazzi/budget-manager-web'>
             <div className="project-card-inner">
               <div className="project-card-front">
                 <h3>Personal Budgeting App </h3>
@@ -43,7 +43,7 @@ const Projects = () => (
           </a>
         </div>
         <div className="project-card" data-aos="zoom-in">
-          <a href='https://github.com/wassimwazzi/Multi-Label-Classification' target="_blank" rel="noreferrer">
+          <a href='https://github.com/wassimwazzi/Multi-Label-Classification'>
             <div className="project-card-inner">
               <div className="project-card-front">
                 <h3>Multi-label classification of handwritten digits and English alphabet</h3>
@@ -58,7 +58,7 @@ const Projects = () => (
           </a>
         </div>
         <div className="project-card" data-aos="zoom-in">
-          <a href='https://github.com/wassimwazzi/Chess' target="_blank" rel="noreferrer">
+          <a href='https://github.com/wassimwazzi/Chess'>
             <div className="project-card-inner">
               <div className="project-card-front">
                 <h3>Chess game and AI </h3>
@@ -73,7 +73,7 @@ const Projects = () => (
           </a>
         </div>
         <div className="project-card" data-aos="zoom-in">
-          <a href='https://github.com/wassimwazzi/splendor' target="_blank" rel="noreferrer">
+          <a href='https://github.com/wassimwazzi/splendor'>
             <div className="project-card-inner">
               <div className="project-card-front">
                 <h3>Splendor Game </h3>

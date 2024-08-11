@@ -11,11 +11,13 @@ import Footer from './components/Footer/Footer';
 import './styles/main.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useOpenLinksInNewTab from './components/useOpenLinksInNewTab';
 
 const App = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+  useOpenLinksInNewTab();
 
   return (
     <div>
