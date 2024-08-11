@@ -1,0 +1,28 @@
+@media (min-width: 768px) {
+    :root {
+        --max-width: 1200px;
+    
+        --font-size: 1.2rem;
+        --font-size-lg: 1.5rem;
+        --font-size-xl: 2rem;
+        --font-size-xxl: 3rem;
+        --font-size-sm: 1rem;
+        --font-size-xs: 0.8rem;
+    
+        --line-height: 1.5;
+        --line-height-lg: 1.8;
+        --line-height-sm: 1.2;
+
+        --spacing-1: 10px;
+        --spacing-2: 20px;
+        --spacing-3: 40px;
+        --spacing-4: 60px;
+        --spacing-5: 80px;
+        --spacing-6: 100px;
+        --spacing-7: 120px;
+    
+        --logo-size: 125px;
+        --logo-size-sm: 100px;
+        --logo-size-lg: 175px;
+    }
+}

@@ -23,7 +23,7 @@ const About = () => (
           <div className="about-education-item">
             <div className='education-item-title'>
               <img src='/mcgill-logo.png' alt='McGill University' />
-              <h4>Bachelor of Science in Computer Science and Statistics</h4>
+              <div>Bachelor of Science in Computer Science and Statistics</div>
             </div>
             <div className="about-education-item-content">
               <p>
@@ -35,7 +35,7 @@ const About = () => (
           <div className="about-education-item">
             <div className='education-item-title'>
               <img src='/clw.png' alt='McGill University' />
-              <h4>Scientific Baccaleaureat with specialty in Math and Physics</h4>
+              <div>Scientific Baccaleaureat with specialty in Math and Physics</div>
             </div>
             <div className="about-education-item-content">
               <p>
