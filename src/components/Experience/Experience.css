@@ -1,46 +1,48 @@
 .experience {
     position: relative; /* Ensure positioning context for the progress bar */
-    padding: 60px 20px;
+    padding: var(--spacing-4) var(--spacing-2);
     color: #333;
     text-align: center;
   }
   
 .experience-title {
-    margin-bottom: 40px;
+    margin-bottom: var(--spacing-3);
 }
   
 .experience-title h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-  
-.experience-title p {
-    font-size: 1.2rem;
-    color: #666;
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-1);
 }
   
 .experience-list {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: var(--spacing-3);
     max-width: 80%;
     margin: 0 auto;
     position: relative; /* Ensure positioning context for the progress bar */
 }
-  
+
 .experience-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
-    padding: 20px;
-    gap: 20px;
+    padding: var(--spacing-2);
+    gap: var(--spacing-2);
     background: #fff;
     border-radius: 10px;
     border: 2px solid var(--highlight-color);
     overflow: hidden;
-  }
-  
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .experience-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 .experience-item::before {
     content: '';
     position: absolute;
@@ -64,43 +66,40 @@
 }
   
 .experience-logo img {
-    max-width: 80px;
+    max-width: var(--logo-size-sm);
     height: auto;
     margin-right: 20px;
 }
-  
-.experience-details {
-    text-align: left;
-}
+ 
   
 .experience-details h3 {
-    font-size: 1.5rem;
+    font-size: var(--font-size-lg);
     margin: 0;
 }
   
 .experience-details {
-    font-size: 1.2rem;
-    color: #666;
+    font-size: var(--font-size);
 }
   
 .experience-date {
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     color: var(--highlight-color);
 }
-  
-.experience-description {
-    flex: 2;
-    text-align: left;
+
+@media (min-width: 768px) {
+    .experience-description {
+        text-align: left;
+        flex: 2;
+    }
 }
   
 .experience-description h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-1);
 }
   
 .experience-description p {
-    font-size: 1rem;
-    color: #555;
+    font-size: var(--font-size);
 }
   
 /* Progress bar */
