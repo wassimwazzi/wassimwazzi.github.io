@@ -27,6 +27,18 @@ const Projects = () => (
         <div className="project-card" data-aos="zoom-in">
           <div className="project-card-inner">
             <div className="project-card-front">
+              <h3>Personal Budgeting App </h3>
+            </div>
+            <div className="project-card-back">
+              <p>Financial goals planning and detailed budgeting, showing spend per category and summary dashboard</p>
+              <p>Automated transaction retrieval from bank and categorization</p>
+              <p> <a href='https://github.com/wassimwazzi/budget-manager-web'>(GitHub)</a></p>
+            </div>
+          </div>
+        </div>
+        <div className="project-card" data-aos="zoom-in">
+          <div className="project-card-inner">
+            <div className="project-card-front">
               <h3>Multi-label classification of handwritten digits and English alphabet</h3>
             </div>
             <div className="project-card-back">
@@ -45,18 +57,6 @@ const Projects = () => (
               <p>Designed a chess engine in python to support 2 human or AI players, with graphics</p>
               <p>Created multiple AI players using minimax and Monte Carlo Algorithm</p>
               <p> <a href='https://github.com/wassimwazzi/Chess'>(GitHub)</a></p>
-            </div>
-          </div>
-        </div>
-        <div className="project-card" data-aos="zoom-in">
-          <div className="project-card-inner">
-            <div className="project-card-front">
-              <h3>Personal Budgeting App </h3>
-            </div>
-            <div className="project-card-back">
-              <p>Financial goals planning and detailed budgeting, showing spend per category and summary dashboard</p>
-              <p>Automated transaction retrieval from bank and categorization</p>
-              <p> <a href='https://github.com/wassimwazzi/budget-manager-web'>(GitHub)</a></p>
             </div>
           </div>
         </div>
