@@ -49,7 +49,7 @@
   perspective: 1000px; /* Perspective for 3D effect */
   position: relative;
   overflow: hidden;
-  height: 160px; /* Initial height */
+  height: 200px; /* Initial height */
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -89,10 +89,17 @@
 .project-card-front {
   background: var(--primary-color);
   color: black;
+  font-size: 1.5rem;
 }
 
 .project-card-back {
   background: #333;
   color: #fff;
   transform: rotateY(180deg); /* Back side flipped */
+  overflow: scroll;
+  font-size: 1.2rem;
+}
+
+.project-card-back .inner-content {
+  padding: 20px;
 }
