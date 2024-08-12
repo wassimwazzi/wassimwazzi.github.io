@@ -39,11 +39,9 @@ const Experience = () => {
                 <div className="experience-list">
                     <div className="experience-item" data-aos="fade-up">
                         <div className="experience-info">
-                            <div className="experience-details">
-                                <h3>Morgan Stanley</h3>
-                                <p>Montreal Canada</p>
-                                <p className="experience-date">August 2023 - Present</p>
-                            </div>
+                            <h3>Morgan Stanley</h3>
+                            <p>Montreal Canada</p>
+                            <p className="experience-date">August 2023 - Present</p>
                         </div>
                         <div className="experience-description">
                             <h3>Technology Associate</h3>
@@ -55,11 +53,9 @@ const Experience = () => {
                     </div>
                     <div className="experience-item" data-aos="fade-up">
                         <div className="experience-info">
-                            <div className="experience-details">
-                                <h3>BMO Radicle</h3>
-                                <p>Montreal Canada</p>
-                                <p className="experience-date">May 2022 - June 2023</p>
-                            </div>
+                            <h3>BMO Radicle</h3>
+                            <p>Montreal Canada</p>
+                            <p className="experience-date">May 2022 - June 2023</p>
                         </div>
                         <div className="experience-description">
                             <h3>Full Stack Developer Intern</h3>
@@ -71,11 +67,9 @@ const Experience = () => {
                     </div>
                     <div className="experience-item" data-aos="fade-up">
                         <div className="experience-info">
-                            <div className="experience-details">
-                                <h3>Microsoft</h3>
-                                <p>Montreal, Canada</p>
-                                <p className="experience-date">September 2021 - May 2022</p>
-                            </div>
+                            <h3>Microsoft</h3>
+                            <p>Montreal, Canada</p>
+                            <p className="experience-date">September 2021 - May 2022</p>
                         </div>
                         <div className="experience-description">
                             <h3>QA Developer Intern</h3>
@@ -95,11 +89,9 @@ const Experience = () => {
                     </div>
                     <div className="experience-item" data-aos="fade-up">
                         <div className="experience-info">
-                            <div className="experience-details">
-                                <h3>McGill University</h3>
-                                <p>Montreal, Canada</p>
-                                <p className="experience-date">May 2021 - December 2021</p>
-                            </div>
+                            <h3>McGill University</h3>
+                            <p>Montreal, Canada</p>
+                            <p className="experience-date">May 2021 - December 2021</p>
                         </div>
                         <div className="experience-description">
                             <h3>Research Assistant</h3>
@@ -116,11 +108,9 @@ const Experience = () => {
                     </div>
                     <div className="experience-item" data-aos="fade-up">
                         <div className="experience-info">
-                            <div className="experience-details">
-                                <h3>McGill University</h3>
-                                <p>Montreal, Canada</p>
-                                <p className="experience-date">September 2021 - May 2023</p>
-                            </div>
+                            <h3>McGill University</h3>
+                            <p>Montreal, Canada</p>
+                            <p className="experience-date">September 2021 - May 2023</p>
                         </div>
                         <div className="experience-description">
                             <h3>Evaluator</h3>
@@ -134,11 +124,9 @@ const Experience = () => {
                     </div>
                     <div className="experience-item" data-aos="fade-up">
                         <div className="experience-info">
-                            <div className="experience-details">
-                                <h3>McGill University</h3>
-                                <p>Montreal, Canada</p>
-                                <p className="experience-date">Jan 2019 - May 2022</p>
-                            </div>
+                            <h3>McGill University</h3>
+                            <p>Montreal, Canada</p>
+                            <p className="experience-date">Jan 2019 - May 2022</p>
                         </div>
                         <div className="experience-description">
                             <h3>Tutor</h3>

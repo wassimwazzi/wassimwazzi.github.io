@@ -62,9 +62,22 @@
 .experience-info {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    gap: var(--spacing-1);
     flex: 1;
+    margin-top: var(--spacing-1);
 }
-  
+
+.experience-info h3 {
+    margin: 0;
+    font-size: var(--font-size-xl);
+}
+ 
+.experience-info p {
+    font-size: var(--font-size);
+    margin: 0;
+}
+
 .experience-logo img {
     max-width: var(--logo-size-sm);
     height: auto;
