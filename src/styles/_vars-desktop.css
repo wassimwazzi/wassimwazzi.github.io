@@ -24,5 +24,11 @@
         --logo-size: 125px;
         --logo-size-sm: 100px;
         --logo-size-lg: 175px;
+
+        --height-1: 10px;
+        --height-2: 50px;
+        --height-3: 100px;
+        --height-4: 170px;
+        --height-5: 500px;
     }
 }

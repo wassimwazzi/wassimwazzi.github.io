@@ -1,7 +1,6 @@
 .projects {
-  padding: 100px 20px;
+  padding: var(--spacing-6) var(--spacing-2);
   color: white;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,8 +20,8 @@
 }
 
 .projects-title {
-  font-size: 3rem;
-  margin-bottom: 30px;
+  font-size: var(--font-size-xxl);
+  margin-bottom: var(--spacing-3);
   position: relative;
   z-index: 1;
   text-align: center; /* Center the title text */
@@ -32,7 +31,7 @@
 .projects-list {
   display: flex;
   flex-direction: column; /* Stack cards vertically */
-  gap: 20px;
+  gap: var(--spacing-2);
   position: relative;
   z-index: 1;
   align-items: center; /* Center cards horizontally */
@@ -41,15 +40,15 @@
 .project-card {
   background: var(--primary-color);
   color: black;
-  padding: 30px;
+  padding: var(--spacing-3);
   border-radius: 12px;
-  width: 50%;
+  min-width: 50%;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
   perspective: 1000px; /* Perspective for 3D effect */
   position: relative;
   overflow: hidden;
-  height: 200px; /* Initial height */
+  height: var(--height-3);
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -72,8 +71,7 @@
 }
 
 .project-card:hover:after {
-  opacity: 1;
-  color: white;
+  opacity: 0;
 }
 
 .project-card-inner {
@@ -105,7 +103,7 @@
 .project-card-front {
   background: var(--primary-color);
   color: black;
-  font-size: 1.5rem;
+  font-size: var(--font-size-lg);
 }
 
 .project-card-back {
@@ -113,9 +111,20 @@
   color: #fff;
   transform: rotateY(180deg); /* Back side flipped */
   overflow: scroll;
-  font-size: 1.2rem;
+  font-size: var(--font-size);
 }
 
 .project-card-back .inner-content {
   padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .project-card-front {
+    font-size: var(--font-size);
+  }
+
+  .project-card {
+    height: var(--height-5);
+    width: 80%;
+  }
 }
