@@ -80,8 +80,8 @@
 .education-item-title {
   align-items: center;
   font-size: var(--font-size-lg);
-  margin-bottom: var(--spacing-2);
   font-weight: 700;
+  margin-bottom: var(--spacing-2);
 }
 
 /* show flex items in a row on mobile */
@@ -89,6 +89,7 @@
   .education-item-title {
     display: flex;
     flex-direction: row;
+    margin-bottom: 0;
   }
 }
 
@@ -127,4 +128,5 @@
 .education-date {
   font-weight: 300;
   color: var(--highlight-color);
+  font-size: var(--font-size);
 }
