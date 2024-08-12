@@ -3,7 +3,7 @@ import { Parallax } from 'react-parallax';
 import './Skills.css';
 
 const Skill = ({ img, title }) => (
-    <div className="about-skill" data-aos="fade-up">
+    <div className="skill" data-aos="fade-up">
         <img src={img} alt={title} title={title} />
         <div className="tooltip">{title}</div>
     </div>
