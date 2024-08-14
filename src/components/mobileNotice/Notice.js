@@ -3,7 +3,7 @@ import './Notice.css';
 
 const Notice = () => {
     return (
-        <div className="notice">
+        <div className="mobile-notice">
             <p>For the best experience, please use a laptop or desktop.</p>
         </div>
     );
