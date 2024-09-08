@@ -1,6 +1,27 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
 import './Projects.css';
+import HoverTitle from '../HoverTitle/Hover';
+
+const Project = ({ logo, title, description, link }) => {
+  const top = <div style={{ display: 'flex' }}>
+    <img src={logo} alt={title} style={{ width: 'var(--logo-size-xl)', height: 'var(--logo-size-xl)' }} />
+    {/* <h3>{title}</h3> */}
+  </div>
+
+  const below = <div style={{ padding: 'var(--spacing-2)' }}>
+    {description.map((point, index) => (
+      <p key={index}>{point}</p>
+    ))}
+  </div>
+
+  return (
+    <HoverTitle
+      top={top}
+      below={below}
+    />
+  )
+}
 
 const Projects = () => (
   <Parallax
@@ -88,6 +109,26 @@ const Projects = () => (
             </div>
           </a>
         </div>
+        <Project logo={'/image_restoration.png'} title={'Blind Face Restoration'} description={[
+          <a href='https://openreview.net/group?id=ML_Reproducibility_Challenge/2021/Fall'> Reproducibility challenge </a>,
+          'The project featured a Lobby Service for online multiplayer support, a Python-based UI for an intuitive user interface, and a robust Java backend for seamless game logic',
+          'Restored old or blurry images using generative adversarial networks'
+        ]} />
+        <Project logo={'/splendor.png'} title={'Splendor'} description={[
+          'Collaborated on a team of 6 to develop the Splendor game with an expansion pack for the  software engineering final project',
+          'The project featured a Lobby Service for online multiplayer support, a Python-based UI for an intuitive user interface, and a robust Java backend for seamless game logic',
+          'Dockerized the application, enabling continuous integration and deployment'
+        ]} />
+        <Project logo={'/splendor.png'} title={'Splendor'} description={[
+          'Collaborated on a team of 6 to develop the Splendor game with an expansion pack for the  software engineering final project',
+          'The project featured a Lobby Service for online multiplayer support, a Python-based UI for an intuitive user interface, and a robust Java backend for seamless game logic',
+          'Dockerized the application, enabling continuous integration and deployment'
+        ]} />
+        <Project logo={'/budget-manager.ico'} title={'budget-manager'} description={[
+          'Collaborated on a team of 6 to develop the Splendor game with an expansion pack for the  software engineering final project',
+          'The project featured a Lobby Service for online multiplayer support, a Python-based UI for an intuitive user interface, and a robust Java backend for seamless game logic',
+          'Dockerized the application, enabling continuous integration and deployment'
+        ]} />
       </div>
     </section>
   </Parallax >

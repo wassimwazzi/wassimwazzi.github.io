@@ -1,0 +1,38 @@
+.outer {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: center;
+  position: relative;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.outer > * {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.outer .below {
+  z-index: 1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  transition: transform 2s ease, opacity 0.5s ease;
+}
+
+.outer .top {
+  z-index: 2;
+  transition: transform 2s ease;
+}
+
+.outer .top.hovered {
+  transform: translateX(-50%);
+}
+
+.outer .below.hovered {
+    opacity: 1;
+    transform: translateX(50%);
+  }
