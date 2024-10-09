@@ -3,9 +3,10 @@
   grid-template: 1fr / 1fr;
   place-items: center;
   position: relative;
-  width: 80vw;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  width: 90vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  overflow: hidden;
 }
 
 .outer > * {
@@ -18,14 +19,14 @@
 
 .outer .below {
   z-index: 1;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease, transform 2s ease;
   opacity: 0;
-  transition: transform 2s ease, opacity 0.5s ease;
 }
 
 .outer .top {
   z-index: 2;
-  transition: transform 2s ease;
+  transition: transform 2s ease, filter 0.5s ease;
+  /* flex-direction: row; */
 }
 
 .outer .top.hovered {
@@ -33,6 +34,8 @@
 }
 
 .outer .below.hovered {
-    opacity: 1;
-    transform: translateX(50%);
-  }
+  opacity: 1;
+  transform: translateX(50%);
+  transition: transform 1.5s ease, opacity 0.75s ease;
+}
+

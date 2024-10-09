@@ -7,7 +7,7 @@ const HoverTitle = ({ top, below, outerStyle }) => {
 
     return (
         <div
-            className="outer"
+            className={`outer ${hovered ? 'hovered' : ''}`}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             style={outerStyle}
