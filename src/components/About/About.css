@@ -6,6 +6,9 @@
   z-index: 1;
   overflow: hidden;
 }
+.about-content {
+  min-height: 80vh;
+}
 
 .about-title {
   font-size: var(--font-size-xxl);
@@ -65,7 +68,6 @@
 }
 
 .about-education {
-  margin-top: var(--spacing-5);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -117,11 +119,11 @@
   margin: 0 auto;
 }
 
-.about-education-item:nth-child(odd) {
+.about-education-item.in-view:nth-child(odd) {
   animation: slideInLeft 2s ease-in-out;
 }
 
-.about-education-item:nth-child(even) {
+.about-education-item.in-view:nth-child(even) {
   animation: slideInRight 2s ease-in-out;
 }
 

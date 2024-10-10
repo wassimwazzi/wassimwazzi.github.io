@@ -68,10 +68,11 @@
   color: black;
   opacity: 1;
   transition: opacity 0.3s ease;
+  transition: color 1s ease;
 }
 
 .project-card:hover:after {
-  opacity: 0;
+  color: white;
 }
 
 .project-card-inner {
@@ -123,4 +124,15 @@
     width: 80%;
     overflow: scroll;
 }
+}
+
+.project-link {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-1)
+}
+
+.project-link > * {
+  align-items: center;
+  display: inline-flex;
 }
