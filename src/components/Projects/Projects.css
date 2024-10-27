@@ -108,8 +108,8 @@
 }
 
 .project-card-back {
-  background: #333;
-  color: #fff;
+  background: var(--primary-color);
+  color: black;
   transform: rotateY(180deg); /* Back side flipped */
   font-size: var(--font-size);
 }

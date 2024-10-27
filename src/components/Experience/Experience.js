@@ -58,7 +58,7 @@ const Experience = () => {
                             <p className="experience-date">May 2022 - June 2023</p>
                         </div>
                         <div className="experience-description">
-                            <h3>Full Stack Developer Intern</h3>
+                            <h3>Full Stack Developer</h3>
                             <p>Collaborated with an Agile team to develop the ClimateSmartBusiness website using Ruby on Rails, CSS, JavaScript, HTML, PostgreSQL, and Redis</p>
                             <p>Contributed to rewriting the codebase using Django and React, leading to a much smoother and modern website</p>
                             <p>Streamlined the website to support live training sessions by integrating with Thinkific</p>
@@ -72,7 +72,7 @@ const Experience = () => {
                             <p className="experience-date">September 2021 - May 2022</p>
                         </div>
                         <div className="experience-description">
-                            <h3>QA Developer Intern</h3>
+                            <h3>QA Developer</h3>
                             <p>
                                 Worked at Nuance Communications, a Microsoft subsidiary, providing customer authentication for call centers using voice biometrics.
                             </p>
