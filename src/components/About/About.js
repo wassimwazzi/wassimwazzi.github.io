@@ -76,7 +76,7 @@ const About = () => {
             ref={(el) => (educationItemsRef.current[1] = el)}>
             <div className='education-item-title'>
               <img src='/clw.png' alt='McGill University' />
-              <div>Scientific Baccaleaureat with specialty in Math and Physics</div>
+              <div>Scientific Baccalaureate with Specialty in Math and Physics</div>
             </div>
             <div className="about-education-item-content">
               <p>
