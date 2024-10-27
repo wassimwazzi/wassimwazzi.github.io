@@ -32,10 +32,7 @@ const Experience = () => {
     return (
         <Parallax bgImage="/Experience.jpg" strength={500}>
             <section className="experience full-height">
-                <div className="experience-title" data-aos="fade-up">
-                    <h2>Experience</h2>
-                    {/* <p>Explore my journey through the various roles I've taken on.</p> */}
-                </div>
+                <h1 className="title" data-aos="fade-up">Experience</h1>
                 <div className="experience-list">
                     <div className="experience-item" data-aos="fade-up">
                         <div className="experience-info">

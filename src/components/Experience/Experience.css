@@ -4,16 +4,7 @@
     color: #333;
     text-align: center;
   }
-  
-.experience-title {
-    margin-bottom: var(--spacing-3);
-}
-  
-.experience-title h2 {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--spacing-1);
-}
-  
+
 .experience-list {
     display: flex;
     flex-direction: column;

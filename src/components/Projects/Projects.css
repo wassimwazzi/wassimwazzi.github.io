@@ -19,15 +19,6 @@
   z-index: 0;
 }
 
-.projects-title {
-  font-size: var(--font-size-xxl);
-  margin-bottom: var(--spacing-3);
-  position: relative;
-  z-index: 1;
-  text-align: center; /* Center the title text */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
-}
-
 .projects-list {
   display: flex;
   flex-direction: column; /* Stack cards vertically */

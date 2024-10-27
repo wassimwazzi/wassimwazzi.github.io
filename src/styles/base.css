@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-family);
     background-color: var(--primary-color);
     color: white;
 }
@@ -12,6 +12,18 @@ a {
 
 .full-height {
     min-height: 100vh;
+}
+
+.title {
+  font-size: var(--font-size-xxl);
+  color: var(--header-color);
+  margin-bottom: var(--spacing-3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-family: var(--header-font);
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 @keyframes backgroundAnimation {
