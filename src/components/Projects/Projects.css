@@ -8,6 +8,10 @@
   overflow: hidden;
 }
 
+.projects .title {
+  color: white;
+}
+
 .projects::before {
   content: '';
   position: absolute;

@@ -5,6 +5,7 @@
   z-index: 1;
   overflow: hidden;
   text-align: center;
+  background: white;
 }
 
 
@@ -27,6 +28,11 @@
   /* padding: var(--spacing-6); */
 }
 
+.about-content .title {
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out 0.5s forwards;
+}
+
 .about-content p {
   padding-bottom: 10px;
   margin: 0;
@@ -36,8 +42,6 @@
   font-size: var(--font-size);
   line-height: var(--line-height-lg);
   max-width: var(--max-width);
-  opacity: 0;
-  animation: fadeIn 3s ease-in-out 0.5s forwards;
   text-align: left;
 }
 

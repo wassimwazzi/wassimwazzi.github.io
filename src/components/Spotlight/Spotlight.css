@@ -1,0 +1,15 @@
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: #333;
+}
+
+.spotlight {
+    position: absolute;
+    width: 300px; /* Adjust size of the spotlight */
+    height: 300px; /* Adjust size of the spotlight */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none; /* Allows clicking through the spotlight */
+    transform: translate(-50%, -50%); /* Center the spotlight */
+    transition: background 0.2s; /* Optional: Smooth transition */
+}

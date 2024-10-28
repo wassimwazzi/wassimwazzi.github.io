@@ -18,7 +18,7 @@
 .skills-category h3 {
     font-size: var(--font-size-xl);
     margin-bottom: var(--spacing-2);
-    color: rgb(78, 85, 46);
+    /* color: rgb(78, 85, 46); */
     text-transform: uppercase;
     font-weight: 600;
 }

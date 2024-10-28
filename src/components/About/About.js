@@ -4,7 +4,7 @@ import './About.css';
 
 const About = () => {
   return (
-    <Parallax bgImage="/About.jpg" strength={700}>
+    <Parallax bgImage="/about.jpg" strength={300}>
       <section id="about" className="about full-height">
         <div className="about-content" data-aos="fade-up">
           <h1 className="title">Hi, I'm Wassim</h1>

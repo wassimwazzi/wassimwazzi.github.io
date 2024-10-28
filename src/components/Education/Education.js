@@ -39,7 +39,7 @@ const Education = () => {
   }, [educationItemsRef]);
 
   return (
-    <Parallax strength={700}>
+    <Parallax strength={100}>
       <section id="education" className="education full-height">
         <div className="education" data-aos="fade-up" data-aos-offset="200">
           <h1 className='title'>Education</h1>
