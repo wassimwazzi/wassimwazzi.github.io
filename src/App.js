@@ -12,10 +12,20 @@ import 'aos/dist/aos.css';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('about');
+  const [curtainVisible, setCurtainVisible] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
+  const handleNavClick = (section) => {
+    if (section !== activeSection) {
+      setCurtainVisible(true); // Show curtain
+      setTimeout(() => {
+        setActiveSection(section); // Switch content after curtain covers
+      }, 500); // Adjust this to match curtain animation duration
+    }
+  };
 
   const renderSection = () => {
     switch (activeSection) {
@@ -36,10 +46,9 @@ const App = () => {
 
   return (
     <div className="app-container">
+      {/* {curtainVisible && <div className="curtain" onAnimationEnd={() => setCurtainVisible(false)} />} */}
       <main className="content-container">
-        <div className="content">
-          {renderSection()}
-        </div>
+        <div className="content">{renderSection()}</div>
         <nav className="nav">
           <div className="nav-links">
             {['about', 'education', 'experience', 'projects', 'skills'].map((section) => (
@@ -47,7 +56,7 @@ const App = () => {
                 key={section}
                 onClick={(e) => {
                   e.preventDefault();
-                  setActiveSection(section);
+                  handleNavClick(section);
                 }}
                 className={activeSection === section ? 'active' : ''}
                 href="#"

@@ -4,6 +4,7 @@
   z-index: 1;
   overflow: hidden;
   text-align: center;
+  height: 100%;
 }
 
 /* Keyframes for Animations */
@@ -40,10 +41,6 @@
   flex-direction: column;
   justify-content: center;
 
-}
-
-.education-item {
-  padding: var(--spacing-3);
 }
 
 .education-item-title {
@@ -86,11 +83,7 @@
   margin: 0 auto;
 }
 
-.education-item.in-view:nth-child(odd) {
-  animation: slideInLeft 2s ease-in-out;
-}
-
-.education-item.in-view:nth-child(even) {
+.education-item {
   animation: slideInRight 2s ease-in-out;
 }
 

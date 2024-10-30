@@ -1,9 +1,24 @@
 .scrollable-container {
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+.scrollable-container .title {
+    flex: 1;
+}
+
+.scrollable-content {
+    flex: 2;
+    display: flex;
+    gap: var(--spacing-4);
+    justify-content: space-between;
 }
 
 .current-component {
-    animation: fadeIn 3s ease-in-out 0.5s forwards;
+    flex: 4;
 }
 
 .fade-in {
@@ -16,13 +31,35 @@
 }
 
 /* Reset the initial position of the current component before transitioning */
-.current-component.slide-forward-enter {
+.scrollable-content.slide-forward-enter {
     transform: translateX(-100%); /* Start from the left */
     opacity: 0; /* Start invisible */
 }
 
 /* Final state for the entering component */
-.current-component.slide-forward-enter-active {
+.scrollable-content.slide-forward-enter-active {
     transform: translateX(0); /* End at the original position */
     opacity: 1; /* Fully visible */
+}
+
+.scrollable-container .progress-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing-2);
+}
+
+.progress-point {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    /* display: inline-block; */
+}
+
+.progress-point.fill {
+    background: var(--highlight-color);
+}
+
+.progress-point.no-fill {
+    background-color: #bbb;
 }

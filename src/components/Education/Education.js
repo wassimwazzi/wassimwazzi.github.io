@@ -1,6 +1,7 @@
 import React from 'react';
 import Scrollable from '../ScrollableContent/Scrollable';
 import './Education.css';
+import { Parallax } from 'react-parallax';
 
 const Education = () => {
   const educationItems = [
@@ -16,26 +17,39 @@ const Education = () => {
       date: 'September 2015 - June 2018',
       logo: '/clw.png',
     },
+    {
+      title: 'Bachelor of Science in Computer Science and Statistics',
+      institution: 'McGill University, Montreal, QC, Canada',
+      date: 'September 2018 - May 2023',
+      logo: '/mcgill-logo.png',
+    },
+    {
+      title: 'Bachelor of Science in Computer Science and Statistics',
+      institution: 'McGill University, Montreal, QC, Canada',
+      date: 'September 2018 - May 2023',
+      logo: '/mcgill-logo.png',
+    },
   ];
 
   return (
-    <section id="education" className="education">
-      <h1 className="title">Education</h1>
-      <Scrollable>
-        {educationItems.map((item, index) => (
-          <div className="education-item" key={index}>
-            <div className="education-item-title">
-              <img src={item.logo} alt={item.institution} className="education-logo" />
-              <div>{item.title}</div>
+    <Parallax strength={300}>
+      <section id="education" className="education">
+        <Scrollable title={'Education'}>
+          {educationItems.map((item, index) => (
+            <div className="education-item" key={index}>
+              <div className="education-item-title">
+                <img src={item.logo} alt={item.institution} className="education-logo" />
+                <div>{item.title}</div>
+              </div>
+              <div className="education-item-content">
+                <p>{item.institution}</p>
+                <div className="education-date">{item.date}</div>
+              </div>
             </div>
-            <div className="education-item-content">
-              <p>{item.institution}</p>
-              <div className="education-date">{item.date}</div>
-            </div>
-          </div>
-        ))}
-      </Scrollable>
-    </section>
+          ))}
+        </Scrollable>
+      </section>
+    </Parallax>
   );
 };
 
