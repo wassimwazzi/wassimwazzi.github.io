@@ -4,18 +4,17 @@ import './Projects.css';
 
 const LinkProj = ({ link }) => (
   <div className='project-link'>
-    <img src='./github.png' style={{ width: '50px' }} alt='github'/>
+    <img src='./github.png' style={{ width: '50px' }} alt='github' />
     <a href={link}> Check it out!</a>
   </div>
 )
 
 const Projects = () => (
   <Parallax
-    bgImage="/Projects.jpg"
     strength={500}
     blur={{ min: -1, max: 3 }}
   >
-    <section id="projects" className="projects full-height" data-aos="fade-up">
+    <section id="projects" className="projects" data-aos="fade-up">
       <h1 className="title">Projects</h1>
       <div className="projects-list">
         <div className="project-card" data-aos="zoom-in">

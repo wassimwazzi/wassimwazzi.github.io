@@ -1,6 +1,5 @@
 .experience {
     position: relative; /* Ensure positioning context for the progress bar */
-    padding: var(--spacing-4) var(--spacing-2);
     color: #333;
     text-align: center;
   }

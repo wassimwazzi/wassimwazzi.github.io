@@ -1,79 +1,41 @@
-import React, { useEffect, useRef } from 'react';
-import { Parallax } from 'react-parallax';
+import React from 'react';
+import Scrollable from '../ScrollableContent/Scrollable';
 import './Education.css';
 
 const Education = () => {
-  const educationItemsRef = useRef([]);
-
-  useEffect(() => {
-    const currentRef = educationItemsRef.current;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Add animation class when the element is in view
-            entry.target.classList.add('in-view');
-          }
-        });
-      },
-      { threshold: 0.1 } // Adjust this threshold as needed
-    );
-
-    // Observe each education item
-    currentRef.forEach((item) => {
-      if (item) {
-        observer.observe(item);
-      }
-    });
-
-    return () => {
-      // Unobserve on component cleanup
-      if (currentRef) {
-        currentRef.forEach((item) => {
-          if (item) {
-            observer.unobserve(item);
-          }
-        });
-      }
-    };
-  }, [educationItemsRef]);
+  const educationItems = [
+    {
+      title: 'Bachelor of Science in Computer Science and Statistics',
+      institution: 'McGill University, Montreal, QC, Canada',
+      date: 'September 2018 - May 2023',
+      logo: '/mcgill-logo.png',
+    },
+    {
+      title: 'Scientific Baccalaureate with Specialty in Math and Physics',
+      institution: 'College Louise Wegmann, Beirut, Lebanon',
+      date: 'September 2015 - June 2018',
+      logo: '/clw.png',
+    },
+  ];
 
   return (
-    <Parallax strength={100}>
-      <section id="education" className="education full-height">
-        <div className="education" data-aos="fade-up" data-aos-offset="200">
-          <h1 className='title'>Education</h1>
-          <div
-            className="education-item"
-            ref={(el) => (educationItemsRef.current[0] = el)}>
-            <div className='education-item-title'>
-              <img src='/mcgill-logo.png' alt='McGill University' />
-              <div>Bachelor of Science in Computer Science and Statistics</div>
+    <section id="education" className="education">
+      <h1 className="title">Education</h1>
+      <Scrollable>
+        {educationItems.map((item, index) => (
+          <div className="education-item" key={index}>
+            <div className="education-item-title">
+              <img src={item.logo} alt={item.institution} className="education-logo" />
+              <div>{item.title}</div>
             </div>
             <div className="education-item-content">
-              <p>
-                McGill University, Montreal, QC, Canada
-              </p>
-              <div className='education-date'> September 2018 - May 2023</div>
+              <p>{item.institution}</p>
+              <div className="education-date">{item.date}</div>
             </div>
           </div>
-          <div
-            className="education-item"
-            ref={(el) => (educationItemsRef.current[1] = el)}>
-            <div className='education-item-title'>
-              <img src='/clw.png' alt='McGill University' />
-              <div>Scientific Baccalaureate with Specialty in Math and Physics</div>
-            </div>
-            <div className="education-item-content">
-              <p>
-                College Louise Wegmann, Beirut, Lebanon
-              </p>
-              <div className='education-date'> September 2015 - June 2018</div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </Parallax>
+        ))}
+      </Scrollable>
+    </section>
   );
 };
 

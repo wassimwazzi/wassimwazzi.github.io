@@ -11,7 +11,7 @@ const Skill = ({ img, title }) => (
 
 const Skills = () => (
     <Parallax strength={50}>
-        <section id="skills" className="skills full-height">
+        <section id="skills" className="skills">
             <div className="skills-content" data-aos="fade-up">
                 <div className="skills-category">
                     <h3>Programming Languages</h3>

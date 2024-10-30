@@ -1,0 +1,28 @@
+.scrollable-container {
+    overflow: hidden;
+}
+
+.current-component {
+    animation: fadeIn 3s ease-in-out 0.5s forwards;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.slide-forward {
+    transform: translateX(100%); /* Move out to the right */
+    opacity: 0; /* Fade out */
+}
+
+/* Reset the initial position of the current component before transitioning */
+.current-component.slide-forward-enter {
+    transform: translateX(-100%); /* Start from the left */
+    opacity: 0; /* Start invisible */
+}
+
+/* Final state for the entering component */
+.current-component.slide-forward-enter-active {
+    transform: translateX(0); /* End at the original position */
+    opacity: 1; /* Fully visible */
+}

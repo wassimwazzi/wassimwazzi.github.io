@@ -2,7 +2,6 @@
     position: relative;
     color: rgb(20 36 26 / 100%);
     text-align: center;
-    padding: var(--spacing-6) var(--spacing-2);
     z-index: 1;
     overflow: hidden;
 }

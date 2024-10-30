@@ -1,11 +1,9 @@
 .education {
   position: relative;
   color: rgb(20 36 26 / 100%);
-  padding: var(--spacing-6) var(--spacing-2);
   z-index: 1;
   overflow: hidden;
   text-align: center;
-  background: beige;
 }
 
 /* Keyframes for Animations */

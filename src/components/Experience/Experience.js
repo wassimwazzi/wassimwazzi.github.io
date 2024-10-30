@@ -30,8 +30,8 @@ const Experience = () => {
     }, []);
 
     return (
-        <Parallax bgImage="/Experience.jpg" strength={500}>
-            <section className="experience full-height">
+        <Parallax strength={500}>
+            <section className="experience">
                 <h1 className="title" data-aos="fade-up">Experience</h1>
                 <div className="experience-list">
                     <div className="experience-item" data-aos="fade-up">

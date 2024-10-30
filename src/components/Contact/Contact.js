@@ -4,7 +4,6 @@ import './Contact.css';
 
 const Contact = () => (
   <Parallax
-    bgImage="/Contact.jpg"
     strength={500}
     blur={{ min: -1, max: 3 }}
   >
