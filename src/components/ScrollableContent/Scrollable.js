@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Scrollable.css';
+import { Parallax } from 'react-parallax';
 
 const Scrollable = ({ title, children }) => {
     const [componentIndex, setComponentIndex] = useState(0);
     const [currentComponent, setCurrentComponent] = useState(children[componentIndex]);
+    const scrollableRef = useRef(null); // Reference for the scrollable component
 
     useEffect(() => {
         setCurrentComponent(children[componentIndex]);
@@ -26,33 +28,41 @@ const Scrollable = ({ title, children }) => {
     };
 
     useEffect(() => {
-        window.addEventListener("wheel", handleScroll);
-        window.addEventListener("touchmove", handleScroll);
+        const scrollableContainer = scrollableRef.current;
+
+        if (scrollableContainer) {
+            scrollableContainer.addEventListener("wheel", handleScroll);
+            scrollableContainer.addEventListener("touchmove", handleScroll);
+        }
 
         return () => {
-            window.removeEventListener("wheel", handleScroll);
-            window.removeEventListener("touchmove", handleScroll);
+            if (scrollableContainer) {
+                scrollableContainer.removeEventListener("wheel", handleScroll);
+                scrollableContainer.removeEventListener("touchmove", handleScroll);
+            }
             clearTimeout(scrollTimeoutRef.current);
         };
     }, [componentIndex, children.length]);
 
     return (
-        <div className="scrollable-container">
-            <h1 className="title">{title}</h1>
-            <div key={componentIndex} className={`scrollable-content`} data-aos="fade-up">
+        <Parallax strength={300} className='scrollable-parallax'>
+            <div ref={scrollableRef} className="scrollable-container">
+                <h1 className="title">{title}</h1>
+                <div key={componentIndex} className="scrollable-content" data-aos="fade-up">
 
-                <div className='progress-bar'>
-                    {children.map((_, index) => (
-                        <div key={index} className={`progress-point ${index <= componentIndex ? 'fill' : 'no-fill'}`}>
-                        </div>
-                    ))}
-                </div>
+                    <div className='progress-bar'>
+                        {children.map((_, index) => (
+                            <div key={index} className={`progress-point ${index <= componentIndex ? 'fill' : 'no-fill'}`}>
+                            </div>
+                        ))}
+                    </div>
 
-                <div className='current-component'>
-                    {currentComponent}
+                    <div className='current-component'>
+                        {currentComponent}
+                    </div>
                 </div>
             </div>
-        </div>
+        </Parallax>
     );
 };
 

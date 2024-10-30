@@ -32,24 +32,22 @@ const Education = () => {
   ];
 
   return (
-    <Parallax strength={300}>
-      <section id="education" className="education">
-        <Scrollable title={'Education'}>
-          {educationItems.map((item, index) => (
-            <div className="education-item" key={index}>
-              <div className="education-item-title">
-                <img src={item.logo} alt={item.institution} className="education-logo" />
-                <div>{item.title}</div>
-              </div>
-              <div className="education-item-content">
-                <p>{item.institution}</p>
-                <div className="education-date">{item.date}</div>
-              </div>
+    <section id="education" className="education">
+      <Scrollable title={'Education'}>
+        {educationItems.map((item, index) => (
+          <div className="education-item" key={index}>
+            <div className="education-item-title">
+              <img src={item.logo} alt={item.institution} className="education-logo" />
+              <div>{item.title}</div>
             </div>
-          ))}
-        </Scrollable>
-      </section>
-    </Parallax>
+            <div className="education-item-content">
+              <p>{item.institution}</p>
+              <div className="education-date">{item.date}</div>
+            </div>
+          </div>
+        ))}
+      </Scrollable>
+    </section>
   );
 };
 

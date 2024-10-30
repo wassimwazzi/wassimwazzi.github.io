@@ -1,9 +1,17 @@
+.scrollable-parallax {
+    height: 100%;
+}
+.scrollable-parallax .react-parallax-content {
+    height: 100%;
+}
+
 .scrollable-container {
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     animation: fadeIn 3s ease-in-out forwards;
+    height: 100%;
 }
 
 .scrollable-container .title {
