@@ -10,18 +10,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    animation: fadeIn 3s ease-in-out forwards;
     height: 100%;
 }
 
 .scrollable-container .title {
-    flex: 1;
+    /* flex-basis: 10%; */
 }
 
 .scrollable-content {
-    flex: 2;
     display: flex;
-    gap: var(--spacing-4);
+    gap: var(--spacing-2);
     justify-content: space-between;
 }
 
@@ -30,7 +28,7 @@
 }
 
 .fade-in {
-    opacity: 1;
+    animation: fadeIn 3s ease-in-out forwards;
 }
 
 .slide-forward {
