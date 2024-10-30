@@ -21,6 +21,7 @@
     display: flex;
     gap: var(--spacing-2);
     justify-content: space-between;
+    position: relative;
 }
 
 .current-component {
@@ -29,23 +30,6 @@
 
 .fade-in {
     animation: fadeIn 3s ease-in-out forwards;
-}
-
-.slide-forward {
-    transform: translateX(100%); /* Move out to the right */
-    opacity: 0; /* Fade out */
-}
-
-/* Reset the initial position of the current component before transitioning */
-.scrollable-content.slide-forward-enter {
-    transform: translateX(-100%); /* Start from the left */
-    opacity: 0; /* Start invisible */
-}
-
-/* Final state for the entering component */
-.scrollable-content.slide-forward-enter-active {
-    transform: translateX(0); /* End at the original position */
-    opacity: 1; /* Fully visible */
 }
 
 .scrollable-container .progress-bar {
@@ -69,3 +53,25 @@
 .progress-point.no-fill {
     background-color: #bbb;
 }
+
+/* .curtain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(65, 61, 61, 1); 
+    animation: curtainEffect 2s;
+    z-index: 10;
+}
+
+@keyframes curtainEffect {
+    0% {
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+    100% {
+        ransform: scaleY(1);
+        transform-origin: bottom;
+    }
+} */

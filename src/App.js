@@ -15,7 +15,13 @@ const App = () => {
   const [curtainVisible, setCurtainVisible] = useState(false);
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({
+      duration: 2000,  // Adjusts the overall duration of the animation
+      easing: 'ease-in-out',  // Easing for smoother transitions
+      once: true, 
+      offset: 100,
+    });
+
   }, []);
 
   const handleNavClick = (section) => {

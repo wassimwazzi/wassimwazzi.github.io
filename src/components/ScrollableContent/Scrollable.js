@@ -48,8 +48,7 @@ const Scrollable = ({ title, children }) => {
         <Parallax strength={300} className='scrollable-parallax'>
             <div ref={scrollableRef} className="scrollable-container fade-in">
                 <h1 className="title">{title}</h1>
-                <div key={componentIndex} className="scrollable-content">
-
+                <div key={componentIndex} className="scrollable-content" data-aos='fade-up'>
                     <div className='progress-bar'>
                         {children.map((_, index) => (
                             <div key={index} className={`progress-point ${index <= componentIndex ? 'fill' : 'no-fill'}`}>

@@ -2,6 +2,7 @@
     position: relative; /* Ensure positioning context for the progress bar */
     color: #333;
     text-align: center;
+    height: 100%;
   }
 
 .experience-list {
