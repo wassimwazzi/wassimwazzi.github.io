@@ -1,13 +1,4 @@
-.skills {
-    position: relative;
-    color: rgb(20 36 26 / 100%);
-    text-align: center;
-    z-index: 1;
-    overflow: hidden;
-}
-
 .skills-category {
-    margin-bottom: var(--spacing-2);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -17,7 +8,6 @@
 .skills-category h3 {
     font-size: var(--font-size-xl);
     margin-bottom: var(--spacing-2);
-    /* color: rgb(78, 85, 46); */
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -28,7 +18,7 @@
     justify-content: center;
     gap: var(--spacing-2);
     margin-bottom: var(--spacing-3);
-    max-width: 50%
+    max-width: 70%;
 }
 
 @media (max-width: 768px) {
@@ -38,7 +28,7 @@
 }
 
 .skill {
-    flex: 1 1 var(--height-3);
+    flex: 0 0 var(--logo-size);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +36,6 @@
     padding: var(--spacing-2);
     transition: transform 0.3s, box-shadow 0.3s;
     overflow: hidden;
-    max-width: var(--height-3);
     opacity: 0;
     animation: fadeIn 2s ease-in-out;
 }

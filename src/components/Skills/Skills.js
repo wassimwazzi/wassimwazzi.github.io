@@ -1,6 +1,53 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
 import './Skills.css';
+import Scrollable from '../common/ScrollableContent/Scrollable';
+
+const SKILLS = [
+    {
+        title: "Programming Languages",
+        skills: [
+            { img: 'python.png', title: 'Python' },
+            { img: 'java.png', title: 'Java' },
+            { img: 'javascript.png', title: 'JavaScript' },
+            { img: 'sql.png', title: 'SQL' },
+            { img: 'r.png', title: 'R' },
+            { img: 'c.png', title: 'C' },
+            { img: 'ruby.png', title: 'Ruby' },
+            { img: 'matlab.png', title: 'Matlab' },
+            { img: 'perl.png', title: 'Perl' },
+            { img: 'ocaml.png', title: 'OCaml' },
+        ]
+    },
+    {
+        title: "Frameworks",
+        skills: [
+            { img: 'react.png', title: 'React' },
+            { img: 'node-js.png', title: 'Node.js' },
+            { img: 'django.png', title: 'Django' },
+            { img: 'flask.png', title: 'Flask' },
+            { img: 'maven.png', title: 'Maven' },
+            { img: 'spring-boot.png', title: 'Spring Boot' },
+            { img: 'ruby-on-rails.png', title: 'Ruby on Rails' },
+            { img: 'bootstrap.png', title: 'Bootstrap' },
+        ]
+    },
+    {
+        title: "Tools",
+        skills: [
+            { img: 'git.png', title: 'Git' },
+            { img: 'docker.png', title: 'Docker' },
+            { img: 'kubernetes.png', title: 'Kubernetes' },
+            { img: 'aws.png', title: 'AWS' },
+            { img: 'azure.png', title: 'Azure' },
+            { img: 'linux.png', title: 'Linux' },
+            { img: 'ansible.png', title: 'Ansible' },
+            { img: 'redis.png', title: 'Redis' },
+            { img: 'splunk.png', title: 'Splunk' },
+            { img: 'celery.png', title: 'Celery' },
+        ]
+    }
+];
 
 const Skill = ({ img, title }) => (
     <div className="skill" data-aos="fade-up">
@@ -10,55 +57,20 @@ const Skill = ({ img, title }) => (
 );
 
 const Skills = () => (
-    <Parallax strength={50}>
-        <section id="skills" className="skills">
-            <div className="skills-content" data-aos="fade-up">
-                <div className="skills-category">
-                    <h3>Programming Languages</h3>
+    <Scrollable>
+        {
+            SKILLS.map((skillData, index) => (
+                <div className="skills-category" key={index}>
+                    <h3>{skillData.title}</h3>
                     <div className="skills-list">
-                        <Skill img="/python.png" title="Python" />
-                        <Skill img="/java.png" title="Java" />
-                        <Skill img="/javascript.png" title="JavaScript" />
-                        <Skill img="/sql.png" title="SQL" />
-                        <Skill img="/r.png" title="R" />
-                        <Skill img="/c.png" title="C" />
-                        <Skill img="/ruby.png" title="Ruby" />
-                        <Skill img="/matlab.png" title="Matlab" />
-                        <Skill img="/perl.png" title="Perl" />
-                        <Skill img="/ocaml.png" title="OCaml" />
+                        {skillData.skills.map((skill, index2) => (
+                            <Skill key={index2} img={`./skills/${skill.img}`} title={skill.title} />
+                        ))}
                     </div>
                 </div>
-                <div className="skills-category">
-                    <h3>Frameworks</h3>
-                    <div className="skills-list">
-                        <Skill img="/react.png" title="React" />
-                        <Skill img="/node-js.png" title="Node.js" />
-                        <Skill img="/django.png" title="Django" />
-                        <Skill img="/flask.png" title="Flask" />
-                        <Skill img="/maven.png" title="Maven" />
-                        <Skill img="/spring-boot.png" title="Spring Boot" />
-                        <Skill img="/ruby-on-rails.png" title="Ruby on Rails" />
-                        <Skill img="/bootstrap.png" title="Bootstrap" />
-                    </div>
-                </div>
-                <div className="skills-category">
-                    <h3>Tools</h3>
-                    <div className="skills-list">
-                        <Skill img="/git.png" title="Git" />
-                        <Skill img="/docker.png" title="Docker" />
-                        <Skill img="/kubernetes.png" title="Kubernetes" />
-                        <Skill img="/aws.png" title="AWS" />
-                        <Skill img="/azure.png" title="Azure" />
-                        <Skill img="/linux.png" title="Linux" />
-                        <Skill img="/ansible.png" title="Ansible" />
-                        <Skill img="/redis.png" title="Redis" />
-                        <Skill img="/splunk.png" title="Splunk" />
-                        <Skill img="/celery.png" title="Celery" />
-                    </div>
-                </div>
-            </div>
-        </section>
-    </Parallax>
+            ))
+        }
+    </Scrollable>
 );
 
 export default Skills;
