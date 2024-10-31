@@ -2,12 +2,6 @@
 @import './base.css';
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
 
-@media (min-width: 768px) {
-  .content {
-    padding: 0 var(--spacing-5);
-  }
-}
-
 .app-container {
   height: 100vh;
   width: 100vw;
@@ -29,6 +23,7 @@
   overflow: hidden;
   height: 100%;
   animation: fadeIn 1s ease both; /* Smooth fade-in effect */
+  padding: var(--spacing-1) var(--spacing-5);
 }
 
 /* Navigation Bar */
@@ -100,7 +95,7 @@
 }
 
 /* Show the button on small screens */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .menu-toggle {
     display: block; /* Show the button */
   }
