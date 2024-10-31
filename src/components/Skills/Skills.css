@@ -56,8 +56,8 @@
 }
 
 .skill:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1.2);
+    box-shadow: 0 1px 4px var(--secondary-color);
 }
 
 @keyframes fadeIn {
