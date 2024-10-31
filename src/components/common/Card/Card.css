@@ -1,8 +1,7 @@
 .card {
-    background-color: var(--background-color);
     padding: var(--spacing-2);
     border-radius: 8px;
     margin-bottom: var(--spacing-3);
-    box-shadow: 0 4px 12px rgba(56, 51, 51, 0.1); /* TODO: Use seconday-color var , but it makes the shadow too dark */
+    box-shadow: 0 1px 6px var(--secondary-color); /* TODO: Use seconday-color var , but it makes the shadow too dark */
     margin: var(--spacing-1);
 }

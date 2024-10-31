@@ -2,6 +2,7 @@ import React from 'react';
 import { Parallax } from 'react-parallax';
 import './Skills.css';
 import Scrollable from '../common/ScrollableContent/Scrollable';
+import { Card } from 'react-bootstrap';
 
 const SKILLS = [
     {
@@ -60,14 +61,16 @@ const Skills = () => (
     <Scrollable>
         {
             SKILLS.map((skillData, index) => (
-                <div className="skills-category" key={index}>
-                    <h3>{skillData.title}</h3>
-                    <div className="skills-list">
-                        {skillData.skills.map((skill, index2) => (
-                            <Skill key={index2} img={`./skills/${skill.img}`} title={skill.title} />
-                        ))}
+                // <Card>
+                    <div className="skills-category" key={index}>
+                        <h3>{skillData.title}</h3>
+                        <div className="skills-list">
+                            {skillData.skills.map((skill, index2) => (
+                                <Skill key={index2} img={`./skills/${skill.img}`} title={skill.title} />
+                            ))}
+                        </div>
                     </div>
-                </div>
+                // </Card>
             ))
         }
     </Scrollable>
