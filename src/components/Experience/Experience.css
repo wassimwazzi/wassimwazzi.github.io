@@ -1,29 +1,16 @@
 .experience {
     position: relative; /* Ensure positioning context for the progress bar */
-    color: #333;
     text-align: center;
     height: 100%;
-  }
-
-.experience-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-3);
-    max-width: 80%;
-    margin: 0 auto;
-    position: relative; /* Ensure positioning context for the progress bar */
 }
+
 
 .experience-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
-    padding: var(--spacing-2);
     gap: var(--spacing-2);
-    background: #fff;
-    border-radius: 10px;
-    border: 2px solid var(--highlight-color);
     overflow: hidden;
     text-align: left;
 }

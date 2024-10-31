@@ -1,5 +1,6 @@
 import React from 'react';
 import Scrollable from '../common/ScrollableContent/Scrollable';
+import Card from '../common/Card/Card';
 import './Experience.css';
 
 const EXPERIENCE_ITEMS = [
@@ -77,19 +78,21 @@ const Experience = () => {
         <section id="experience" className="experience">
             <Scrollable>
                 {EXPERIENCE_ITEMS.map((item, index) => (
-                    <div className="experience-item" key={index}>
-                        <div className="experience-info">
-                            <h3>{item.company}</h3>
-                            <p>{item.location}</p>
-                            <p className="experience-date">{item.date}</p>
+                    <Card key={index}>
+                        <div className="experience-item">
+                            <div className="experience-info">
+                                <h3>{item.company}</h3>
+                                <p>{item.location}</p>
+                                <p className="experience-date">{item.date}</p>
+                            </div>
+                            <div className="experience-description">
+                                <h3>{item.title}</h3>
+                                {item.descriptions.map((desc, i) => (
+                                    <p key={i}>{desc}</p>
+                                ))}
+                            </div>
                         </div>
-                        <div className="experience-description">
-                            <h3>{item.title}</h3>
-                            {item.descriptions.map((desc, i) => (
-                                <p key={i}>{desc}</p>
-                            ))}
-                        </div>
-                    </div>
+                    </Card>
                 ))}
             </Scrollable>
         </section>
