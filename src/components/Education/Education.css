@@ -9,12 +9,6 @@
 .education-item {
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.814);
-  padding: var(--spacing-2);
-  border-radius: 8px;
-  margin-bottom: var(--spacing-3);
-  box-shadow: 0 4px 12px rgba(218, 16, 16, 0.1);
-  animation: fadeIn 1.5s ease-in-out;
 }
 
 .education-item-content {

@@ -1,5 +1,6 @@
 import React from 'react';
-import Scrollable from '../ScrollableContent/Scrollable';
+import Scrollable from '../common/ScrollableContent/Scrollable';
+import Card from '../common/Card/Card';
 import './Education.css';
 
 const EDUCATION_ITEMS = [
@@ -24,19 +25,21 @@ const Education = () => {
     <section id="education" className="education">
       <Scrollable>
         {EDUCATION_ITEMS.map((item, index) => (
-          <div className="education-item" key={index}>
-            <img src={item.logo} alt={item.institution} className="education-logo" />
-            <div className='education-item-content'>
-              <div className="education-item-title">
-                {item.title}
+          <Card key={index}>
+            <div className="education-item">
+              <img src={item.logo} alt={item.institution} className="education-logo" />
+              <div className='education-item-content'>
+                <div className="education-item-title">
+                  {item.title}
+                </div>
+                <div className="education-item-instirtution">
+                  <p>{item.institution}</p>
+                  <div className="education-date">{item.date}</div>
+                </div>
+                <p className="education-description">{item.description}</p>
               </div>
-              <div className="education-item-instirtution">
-                <p>{item.institution}</p>
-                <div className="education-date">{item.date}</div>
-              </div>
-              <p className="education-description">{item.description}</p>
             </div>
-          </div>
+          </Card>
         ))}
       </Scrollable>
     </section>

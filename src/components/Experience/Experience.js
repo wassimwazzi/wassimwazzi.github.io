@@ -1,5 +1,5 @@
 import React from 'react';
-import Scrollable from '../ScrollableContent/Scrollable';
+import Scrollable from '../common/ScrollableContent/Scrollable';
 import './Experience.css';
 
 const EXPERIENCE_ITEMS = [
