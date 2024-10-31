@@ -1,94 +1,67 @@
 .education {
   position: relative;
-  color: rgb(20 36 26 / 100%);
-  z-index: 1;
-  overflow: hidden;
+  color: rgb(20, 36, 26);
   text-align: center;
   height: 100%;
+  padding: var(--spacing-3);
 }
 
-/* Keyframes for Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.education {
+.education-item {
   display: flex;
   align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.814);
+  padding: var(--spacing-2);
+  border-radius: 8px;
+  margin-bottom: var(--spacing-3);
+  box-shadow: 0 4px 12px rgba(218, 16, 16, 0.1);
+  animation: fadeIn 1.5s ease-in-out;
+}
 
+.education-item-content {
+  flex: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
 }
 
 .education-item-title {
   align-items: center;
   font-size: var(--font-size-lg);
   font-weight: 700;
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-1);
 }
 
-/* show flex items in a row on mobile */
-@media (min-width: 768px ) {
-  .education-item-title {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 0;
-  }
-}
-
-.education h3 {
-  font-size: var(--font-size-xxl);
-  margin: 20px;
-  color: rgb(78, 85, 46);
-}
-
-.education-item img {
-  width: var(--logo-size-lg);
+.education-logo {
+  width: var(--logo-size);
   height: auto;
+  margin-right: var(--spacing-2);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.education-item img:hover {
+.education-logo:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.education-item p {
+.education-item-content p {
   font-size: var(--font-size);
   line-height: var(--line-height);
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
-}
-
-.education-item {
-  animation: slideInRight 2s ease-in-out;
+  color: rgb(78, 85, 46);
 }
 
 .education-date {
   font-weight: 300;
-  color: var(--highlight-color);
+  color: var(--highlight-color, rgb(78, 85, 46));
   font-size: var(--font-size);
+  margin-top: var(--spacing-1);
+}
+
+.education-description {
+  margin-top: var(--spacing-1);
+  font-style: italic;
+  font-size: var(--font-size-sm);
+  color: rgb(60, 64, 50);
 }
