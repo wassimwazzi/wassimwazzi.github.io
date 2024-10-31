@@ -13,31 +13,12 @@
 }
 
 .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--logo-size), 1fr)); /* Adjusts columns to fit screen */
     gap: var(--spacing-2);
     margin-bottom: var(--spacing-3);
     max-width: 70%;
-}
-
-@media (max-width: 768px) {
-    .skills-list {
-        max-width: 100%;
-    }
-}
-
-.skill {
-    flex: 0 0 var(--logo-size);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    padding: var(--spacing-2);
-    transition: transform 0.3s, box-shadow 0.3s;
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out;
+    justify-items: center; /* Centers items within each grid cell */
 }
 
 .skill {
@@ -48,8 +29,8 @@
 
 .skill .tooltip {
     visibility: hidden;
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     background-color: var(--secondary-color);
     color: var(--primary-color);
     text-align: center;

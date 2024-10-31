@@ -6,7 +6,7 @@ import './Projects.css';
 const PROJECT_ITEMS = [
   {
     title: 'Personal Budgeting App',
-    link: 'https://budget-manager-frontend-0ec640b5ed51.herokuapp.com/',
+    link: { link: 'https://budget-manager-frontend-0ec640b5ed51.herokuapp.com/', image: './projects/budget_manager/favicon.ico' },
     github: 'https://github.com/wassimwazzi/budget-manager-web',
     images: ['./projects/budget_manager/1.png', './projects/budget_manager/2.png', './projects/budget_manager/3.png', './projects/budget_manager/4.png', './projects/budget_manager/5.png', './projects/budget_manager/6.png'],
     details: [
@@ -62,9 +62,13 @@ const Projects = () => {
             <div className='project-content'>
               <div className="project-title">
                 <h3>{project.title}</h3>
-                <div className="project-link">
+                {project.link && <div className="project-link">
+                  <img src={project.link.image} style={{ width: '50px' }} />
+                  <a href={project.link.link} target="_blank" rel="noopener noreferrer">Give it a try!</a>
+                </div>}
+                <div className="github-link">
                   <img src="./github.png" style={{ width: '50px' }} alt="github" />
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">Check it out!</a>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">Read the code!</a>
                 </div>
               </div>
               <div className="project-details-container">

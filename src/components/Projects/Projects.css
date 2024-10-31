@@ -19,10 +19,14 @@
   align-items: center;
 }
 
-.project-link {
+.github-link, .project-link {
   display: flex;
   align-items: center;
   gap: var(--spacing-1);
+}
+
+.github-link a, .project-link a {
+  width: 150px;
 }
 
 .project-details {
