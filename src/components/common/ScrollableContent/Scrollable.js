@@ -7,6 +7,7 @@ const Scrollable = ({ title, children }) => {
     const [currentComponent, setCurrentComponent] = useState(children[componentIndex]);
     const [fadeDirection, setFadeDirection] = useState('up');
     const scrollableRef = useRef(null); // Reference for the scrollable component
+    const touchStartY = useRef(0); // Ref to track the starting touch position
 
     useEffect(() => {
         setCurrentComponent(children[componentIndex]);
@@ -22,12 +23,36 @@ const Scrollable = ({ title, children }) => {
         scrollTimeoutRef.current = setTimeout(() => {
             if (event.deltaY > 0 && componentIndex < children.length - 1) {
                 setComponentIndex((prevIndex) => prevIndex + 1);
-                setFadeDirection('up')
+                setFadeDirection('up');
             } else if (event.deltaY < 0 && componentIndex > 0) {
                 setComponentIndex((prevIndex) => prevIndex - 1);
-                setFadeDirection('down')
+                setFadeDirection('down');
             }
         }, 100);
+    };
+
+    const handleTouchStart = (event) => {
+        // Store the initial touch position
+        touchStartY.current = event.touches[0].clientY;
+    };
+
+    const handleTouchMove = (event) => {
+        // Prevent the default scroll behavior
+        event.preventDefault();
+        
+        const touchCurrentY = event.touches[0].clientY;
+        const deltaY = touchStartY.current - touchCurrentY;
+
+        // Call the scroll handler with the deltaY value
+        if (Math.abs(deltaY) > 30) { // Threshold to prevent accidental scrolling
+            if (deltaY > 0 && componentIndex < children.length - 1) {
+                setComponentIndex((prevIndex) => prevIndex + 1);
+                setFadeDirection('up');
+            } else if (deltaY < 0 && componentIndex > 0) {
+                setComponentIndex((prevIndex) => prevIndex - 1);
+                setFadeDirection('down');
+            }
+        }
     };
 
     useEffect(() => {
@@ -35,13 +60,15 @@ const Scrollable = ({ title, children }) => {
 
         if (scrollableContainer) {
             scrollableContainer.addEventListener("wheel", handleScroll);
-            scrollableContainer.addEventListener("touchmove", handleScroll);
+            scrollableContainer.addEventListener("touchstart", handleTouchStart);
+            scrollableContainer.addEventListener("touchmove", handleTouchMove, { passive: false }); // Use passive: false to prevent default scrolling
         }
 
         return () => {
             if (scrollableContainer) {
                 scrollableContainer.removeEventListener("wheel", handleScroll);
-                scrollableContainer.removeEventListener("touchmove", handleScroll);
+                scrollableContainer.removeEventListener("touchstart", handleTouchStart);
+                scrollableContainer.removeEventListener("touchmove", handleTouchMove);
             }
             clearTimeout(scrollTimeoutRef.current);
         };
