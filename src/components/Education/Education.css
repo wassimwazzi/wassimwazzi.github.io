@@ -21,7 +21,6 @@
 .education-logo {
   width: var(--logo-size-lg);
   height: auto;
-  margin-right: var(--spacing-2);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -35,7 +34,6 @@
   line-height: var(--line-height);
   max-width: 600px;
   margin: 0 auto;
-  color: rgb(78, 85, 46);
 }
 
 .education-date {
@@ -49,5 +47,4 @@
   margin-top: var(--spacing-1);
   font-style: italic;
   font-size: var(--font-size-sm);
-  color: rgb(60, 64, 50);
 }

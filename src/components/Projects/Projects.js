@@ -6,7 +6,8 @@ import './Projects.css';
 const PROJECT_ITEMS = [
   {
     title: 'Personal Budgeting App',
-    link: 'https://github.com/wassimwazzi/budget-manager-web',
+    link: 'https://budget-manager-frontend-0ec640b5ed51.herokuapp.com/',
+    github: 'https://github.com/wassimwazzi/budget-manager-web',
     images: ['./projects/budget_manager/1.png', './projects/budget_manager/2.png', './projects/budget_manager/3.png', './projects/budget_manager/4.png', './projects/budget_manager/5.png', './projects/budget_manager/6.png'],
     details: [
       "Financial goals planning and detailed budgeting, showing spend per category and summary dashboard.",
@@ -15,7 +16,7 @@ const PROJECT_ITEMS = [
   },
   {
     title: 'Splendor Game',
-    link: 'https://github.com/wassimwazzi/splendor',
+    github: 'https://github.com/wassimwazzi/splendor',
     details: [
       "Collaborated on a team of 6 to develop the Splendor game with an expansion pack for the software engineering final project.",
       "The project featured a Lobby Service for online multiplayer support, a Python-based UI for an intuitive user interface, and a robust Java backend for seamless game logic.",
@@ -24,7 +25,7 @@ const PROJECT_ITEMS = [
   },
   {
     title: 'Blind Face Restoration',
-    link: 'https://github.com/wassimwazzi/Image-Restoration',
+    github: 'https://github.com/wassimwazzi/Image-Restoration',
     images: ['./projects/blind_face/1.png', './projects/blind_face/2.png', './projects/blind_face/3.png'],
     details: [
       <a href='https://openreview.net/group?id=ML_Reproducibility_Challenge/2021/Fall' key="challenge-link">Reproducibility challenge</a>,
@@ -36,7 +37,7 @@ const PROJECT_ITEMS = [
   },
   {
     title: 'Multi-label Classification of Handwritten Digits and English Alphabet',
-    link: 'https://github.com/wassimwazzi/Multi-Label-Classification',
+    github: 'https://github.com/wassimwazzi/Multi-Label-Classification',
     details: [
       "Built a neural network to correctly classify hand-written numbers and letters on images.",
       "Achieved over 95% accuracy on over 40,000 test images.",
@@ -44,7 +45,7 @@ const PROJECT_ITEMS = [
   },
   {
     title: 'Chess Game and AI',
-    link: 'https://github.com/wassimwazzi/Chess',
+    github: 'https://github.com/wassimwazzi/Chess',
     details: [
       "Designed a chess engine in Python to support 2 human or AI players, with graphics.",
       "Created multiple AI players using minimax and Monte Carlo Algorithm.",
@@ -63,7 +64,7 @@ const Projects = () => {
                 <h3>{project.title}</h3>
                 <div className="project-link">
                   <img src="./github.png" style={{ width: '50px' }} alt="github" />
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">Check it out!</a>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">Check it out!</a>
                 </div>
               </div>
               <div className="project-details-container">

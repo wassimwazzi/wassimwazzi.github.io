@@ -4,8 +4,10 @@
 :root {
   --primary-color: #fff;
   --secondary-color: #333;
-  --highlight-color: #9380e0;
+  --secondary-color-rgb: rgb(51 51 51);
+  --highlight-color: #800000;
   --background-color: #f8f9fa;
+  --font-color: rgb(20 36 26 / 100%);
   --border-color: #dee2e6;
   --font-family: 'Roboto', sans-serif;
   --header-font: 'Playfair Display', serif;
