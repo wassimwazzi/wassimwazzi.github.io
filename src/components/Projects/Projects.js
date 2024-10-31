@@ -66,7 +66,7 @@ const Projects = () => {
               <div className="project-title">
                 <h3>{project.title}</h3>
                 {project.link && <div className="project-link">
-                  <img src={project.link.image} style={{ width: '50px' }} />
+                  <img src={project.link.image || ''} style={{ width: '50px' }} />
                   <a href={project.link.link} target="_blank" rel="noopener noreferrer">Give it a try!</a>
                 </div>}
                 <div className="github-link">

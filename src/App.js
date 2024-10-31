@@ -14,7 +14,6 @@ import 'aos/dist/aos.css';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('about');
-  const [curtainVisible, setCurtainVisible] = useState(false);
 
   useEffect(() => {
     AOS.init({
@@ -27,10 +26,7 @@ const App = () => {
 
   const handleNavClick = (section) => {
     if (section !== activeSection) {
-      setCurtainVisible(true); // Show curtain
-      setTimeout(() => {
-        setActiveSection(section); // Switch content after curtain covers
-      }, 500); // Adjust this to match curtain animation duration
+      setActiveSection(section)
     }
   };
 
@@ -53,7 +49,6 @@ const App = () => {
 
   return (
     <div className="app-container">
-      {/* {curtainVisible && <div className="curtain" onAnimationEnd={() => setCurtainVisible(false)} />} */}
       <main className="content-container">
         <ThemeProvider>
           <ThemeToggle />
