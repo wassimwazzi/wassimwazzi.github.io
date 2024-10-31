@@ -1,6 +1,7 @@
 import React from 'react';
 import Scrollable from '../common/ScrollableContent/Scrollable';
 import Card from '../common/Card/Card';
+import { useTheme } from '../Theme/ThemeContext';
 import './Projects.css';
 
 const PROJECT_ITEMS = [
@@ -54,6 +55,8 @@ const PROJECT_ITEMS = [
 ];
 
 const Projects = () => {
+  const { isLight } = useTheme();
+
   return (
     <Scrollable>
       {PROJECT_ITEMS.map((project, index) => (
@@ -67,7 +70,7 @@ const Projects = () => {
                   <a href={project.link.link} target="_blank" rel="noopener noreferrer">Give it a try!</a>
                 </div>}
                 <div className="github-link">
-                  <img src="./github.png" style={{ width: '50px' }} alt="github" />
+                  <img src={`./github-${isLight() ? 'light' : 'dark'}.png`} style={{ width: '50px' }} alt="github" />
                   <a href={project.github} target="_blank" rel="noopener noreferrer">Read the code!</a>
                 </div>
               </div>

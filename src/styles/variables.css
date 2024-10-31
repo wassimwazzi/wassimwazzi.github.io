@@ -2,6 +2,17 @@
 @import './_vars-desktop.css';
 
 :root {
+  --primary-color: #fff;
+  --secondary-color: #8a8484;
+  --highlight-color: #120745;
+  --font-color: rgb(56, 66, 60);
+  --border-color: #dee2e6;
+  --font-family: 'Roboto', sans-serif;
+  --header-font: 'Playfair Display', serif;
+  --header-color: #4E552E;
+}
+
+[data-theme="dark"] {
   --primary-color: #121212;
   --secondary-color: #444141;
   --highlight-color: #800000;

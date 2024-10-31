@@ -6,6 +6,8 @@ import Projects from './components/Projects/Projects';
 import Skills from './components/Skills/Skills';
 import Experience from './components/Experience/Experience';
 import Footer from './components/Footer/Footer';
+import { ThemeProvider } from './components/Theme/ThemeContext';
+import ThemeToggle from './components/Theme/ThemeToggle';
 import './styles/main.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -18,7 +20,7 @@ const App = () => {
     AOS.init({
       duration: 2000,  // Adjusts the overall duration of the animation
       easing: 'ease-in-out',  // Easing for smoother transitions
-      once: true, 
+      once: true,
       offset: 100,
     });
   }, []);
@@ -53,24 +55,27 @@ const App = () => {
     <div className="app-container">
       {/* {curtainVisible && <div className="curtain" onAnimationEnd={() => setCurtainVisible(false)} />} */}
       <main className="content-container">
-        <div className="content">{renderSection()}</div>
-        <nav className="nav">
-          <div className="nav-links">
-            {['about', 'education', 'experience', 'projects', 'skills'].map((section) => (
-              <a
-                key={section}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(section);
-                }}
-                className={activeSection === section ? 'active' : ''}
-                href="#"
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </a>
-            ))}
-          </div>
-        </nav>
+        <ThemeProvider>
+          <ThemeToggle />
+          <div className="content">{renderSection()}</div>
+          <nav className="nav">
+            <div className="nav-links">
+              {['about', 'education', 'experience', 'projects', 'skills'].map((section) => (
+                <a
+                  key={section}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(section);
+                  }}
+                  className={activeSection === section ? 'active' : ''}
+                  href="#"
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </a>
+              ))}
+            </div>
+          </nav>
+        </ThemeProvider>
       </main>
       {/* <Footer /> */}
     </div>
