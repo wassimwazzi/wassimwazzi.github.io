@@ -5,6 +5,7 @@ import { Parallax } from 'react-parallax';
 const Scrollable = ({ title, children }) => {
     const [componentIndex, setComponentIndex] = useState(0);
     const [currentComponent, setCurrentComponent] = useState(children[componentIndex]);
+    const [fadeDirection, setFadeDirection] = useState('up');
     const scrollableRef = useRef(null); // Reference for the scrollable component
 
     useEffect(() => {
@@ -21,8 +22,10 @@ const Scrollable = ({ title, children }) => {
         scrollTimeoutRef.current = setTimeout(() => {
             if (event.deltaY > 0 && componentIndex < children.length - 1) {
                 setComponentIndex((prevIndex) => prevIndex + 1);
+                setFadeDirection('up')
             } else if (event.deltaY < 0 && componentIndex > 0) {
                 setComponentIndex((prevIndex) => prevIndex - 1);
+                setFadeDirection('down')
             }
         }, 100);
     };
@@ -48,7 +51,7 @@ const Scrollable = ({ title, children }) => {
         <Parallax strength={300} className='scrollable-parallax'>
             <div ref={scrollableRef} className="scrollable-container fade-in">
                 <h1 className="title">{title}</h1>
-                <div key={componentIndex} className="scrollable-content" data-aos='fade-up'>
+                <div key={componentIndex} className="scrollable-content" data-aos={`fade-${fadeDirection}`}>
                     <div className='progress-bar'>
                         {children.map((_, index) => (
                             <div key={index} className={`progress-point ${index <= componentIndex ? 'fill' : 'no-fill'}`}>
