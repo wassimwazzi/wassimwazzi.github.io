@@ -21,7 +21,6 @@ const App = () => {
       once: true, 
       offset: 100,
     });
-
   }, []);
 
   const handleNavClick = (section) => {
