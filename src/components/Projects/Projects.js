@@ -1,97 +1,80 @@
 import React from 'react';
-import { Parallax } from 'react-parallax';
+import Scrollable from '../common/ScrollableContent/Scrollable';
+import Card from '../common/Card/Card';
 import './Projects.css';
 
-const LinkProj = ({ link }) => (
-  <div className='project-link'>
-    <img src='./github.png' style={{ width: '50px' }} alt='github' />
-    <a href={link}> Check it out!</a>
-  </div>
-)
+const PROJECT_ITEMS = [
+  {
+    title: 'Blind Face Restoration',
+    link: 'https://github.com/wassimwazzi/Image-Restoration',
+    details: [
+      <a href='https://openreview.net/group?id=ML_Reproducibility_Challenge/2021/Fall' key="challenge-link">Reproducibility challenge</a>,
+      <>
+        Based on: <a href='https://arxiv.org/pdf/2101.04061.pdf' key="paper-link">Towards Real-World Blind Face Restoration with Generative Facial Prior</a>
+      </>,
+      "Restored old or blurry images using generative adversarial networks",
+    ],
+  },
+  {
+    title: 'Personal Budgeting App',
+    link: 'https://github.com/wassimwazzi/budget-manager-web',
+    details: [
+      "Financial goals planning and detailed budgeting, showing spend per category and summary dashboard.",
+      "Automated transaction retrieval from bank and categorization.",
+    ],
+  },
+  {
+    title: 'Multi-label Classification of Handwritten Digits and English Alphabet',
+    link: 'https://github.com/wassimwazzi/Multi-Label-Classification',
+    details: [
+      "Built a neural network to correctly classify hand-written numbers and letters on images.",
+      "Achieved over 95% accuracy on over 40,000 test images.",
+    ],
+  },
+  {
+    title: 'Chess Game and AI',
+    link: 'https://github.com/wassimwazzi/Chess',
+    details: [
+      "Designed a chess engine in Python to support 2 human or AI players, with graphics.",
+      "Created multiple AI players using minimax and Monte Carlo Algorithm.",
+    ],
+  },
+  {
+    title: 'Splendor Game',
+    link: 'https://github.com/wassimwazzi/splendor',
+    details: [
+      "Collaborated on a team of 6 to develop the Splendor game with an expansion pack for the software engineering final project.",
+      "The project featured a Lobby Service for online multiplayer support, a Python-based UI for an intuitive user interface, and a robust Java backend for seamless game logic.",
+      "Dockerized the application, enabling continuous integration and deployment.",
+    ],
+  },
+];
 
-const Projects = () => (
-  <Parallax
-    strength={500}
-    blur={{ min: -1, max: 3 }}
-  >
-    <section id="projects" className="projects" data-aos="fade-up">
-      <h1 className="title">Projects</h1>
-      <div className="projects-list">
-        <div className="project-card" data-aos="zoom-in">
-          <div className="project-card-inner">
-            <div className="project-card-front">
-              <h3>Blind Face Restoration</h3>
-            </div>
-            <div className="project-card-back">
-              <div className="inner-content">
-                <p><a href='https://openreview.net/group?id=ML_Reproducibility_Challenge/2021/Fall'> Reproducibility challenge </a></p>
-                <p>Based on: <a href='https://arxiv.org/pdf/2101.04061.pdf'>Towards Real-World Blind Face Restoration with Generative Facial Prior</a></p>
-                <p>Restored old or blurry images using generative adversarial networks</p>
-                <LinkProj link='https://github.com/wassimwazzi/Image-Restoration' />
+const Projects = () => {
+  return (
+      <Scrollable>
+        {PROJECT_ITEMS.map((project, index) => (
+          <Card key={index}>
+            <div className="project-item">
+              <div className='project-title'>
+                <h3>{project.title}</h3>
+                <div className='project-link'>
+                  <img src='./github.png' style={{ width: '50px' }} alt='github' />
+                  <a href={project.link}> Check it out!</a>
+                </div>
+              </div>
+              <div className='project-content'>
+                <div className="project-details">
+                  {project.details.map((detail, i) => (
+                    <p key={i}>{detail}</p>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="project-card" data-aos="zoom-in">
-          <div className="project-card-inner">
-            <div className="project-card-front">
-              <h3>Personal Budgeting App </h3>
-            </div>
-            <div className="project-card-back">
-              <div className="inner-content">
-                <p>Financial goals planning and detailed budgeting, showing spend per category and summary dashboard</p>
-                <p>Automated transaction retrieval from bank and categorization</p>
-                <LinkProj link='https://github.com/wassimwazzi/budget-manager-web' />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="project-card" data-aos="zoom-in">
-          <div className="project-card-inner">
-            <div className="project-card-front">
-              <h3>Multi-label classification of handwritten digits and English alphabet</h3>
-            </div>
-            <div className="project-card-back">
-              <div className="inner-content">
-                <p> Built a neural network to correctly classify hand-written numbers and letters on images </p>
-                <p>Achieved over 95% accuracy on over 40, 000 test images</p>
-                <LinkProj link='https://github.com/wassimwazzi/Multi-Label-Classification' />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="project-card" data-aos="zoom-in">
-          <div className="project-card-inner">
-            <div className="project-card-front">
-              <h3>Chess game and AI </h3>
-            </div>
-            <div className="project-card-back">
-              <div className="inner-content">
-                <p>Designed a chess engine in python to support 2 human or AI players, with graphics</p>
-                <p>Created multiple AI players using minimax and Monte Carlo Algorithm</p>
-                <LinkProj link='https://github.com/wassimwazzi/Chess' />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="project-card" data-aos="zoom-in">
-          <div className="project-card-inner">
-            <div className="project-card-front">
-              <h3>Splendor Game </h3>
-            </div>
-            <div className="project-card-back">
-              <div className="inner-content">
-                <p>Collaborated on a team of 6 to develop the Splendor game with an expansion pack for the  software engineering final project</p>
-                <p>The project featured a Lobby Service for online multiplayer support, a Python-based UI for an intuitive user interface, and a robust Java backend for seamless game logic</p>
-                <p>Dockerized the application, enabling continuous integration and deployment</p>
-                <LinkProj link='https://github.com/wassimwazzi/splendor' />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </Parallax >
-);
+          </Card>
+        ))}
+      </Scrollable>
+  );
+};
 
 export default Projects;

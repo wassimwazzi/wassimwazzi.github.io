@@ -22,7 +22,6 @@ const EDUCATION_ITEMS = [
 
 const Education = () => {
   return (
-    <section id="education" className="education">
       <Scrollable>
         {EDUCATION_ITEMS.map((item, index) => (
           <Card key={index}>
@@ -42,7 +41,6 @@ const Education = () => {
           </Card>
         ))}
       </Scrollable>
-    </section>
   );
 };
 

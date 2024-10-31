@@ -75,27 +75,25 @@ const EXPERIENCE_ITEMS = [
 
 const Experience = () => {
     return (
-        <section id="experience" className="experience">
-            <Scrollable>
-                {EXPERIENCE_ITEMS.map((item, index) => (
-                    <Card key={index}>
-                        <div className="experience-item">
-                            <div className="experience-info">
-                                <h3>{item.company}</h3>
-                                <p>{item.location}</p>
-                                <p className="experience-date">{item.date}</p>
-                            </div>
-                            <div className="experience-description">
-                                <h3>{item.title}</h3>
-                                {item.descriptions.map((desc, i) => (
-                                    <p key={i}>{desc}</p>
-                                ))}
-                            </div>
+        <Scrollable>
+            {EXPERIENCE_ITEMS.map((item, index) => (
+                <Card key={index}>
+                    <div className="experience-item">
+                        <div className="experience-info">
+                            <h3>{item.company}</h3>
+                            <p>{item.location}</p>
+                            <p className="experience-date">{item.date}</p>
                         </div>
-                    </Card>
-                ))}
-            </Scrollable>
-        </section>
+                        <div className="experience-description">
+                            <h3>{item.title}</h3>
+                            {item.descriptions.map((desc, i) => (
+                                <p key={i}>{desc}</p>
+                            ))}
+                        </div>
+                    </div>
+                </Card>
+            ))}
+        </Scrollable>
     );
 };
 
