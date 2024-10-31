@@ -1,11 +1,11 @@
 .theme-toggle-container {
     position: relative;
-    display: inline-block; 
     top: 0;
     right: 0;
     display: flex;
     gap: var(--spacing-1);
     justify-content:right;
+    align-items: center;
     margin: var(--spacing-2);
 }
 

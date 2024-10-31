@@ -83,3 +83,47 @@
   color: var(--secondary-color);
   font-weight: 600;
 }
+
+/* Styles for the mobile menu */
+.menu-toggle {
+  display: none; /* Initially hide the button */
+  background: none;
+  border: none;
+  font-size: 2rem; /* Adjust size as needed */
+  color: var(--secondary-color);
+  cursor: pointer;
+  margin: 0;
+  position: absolute; /* Position it absolutely */
+  top: 10px; /* Adjust based on your design */
+  left: 10px; /* Align to the left */
+  z-index: 1000; /* Ensure it is on top */
+}
+
+/* Show the button on small screens */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Show the button */
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack links vertically */
+    position: absolute; /* Position the menu */
+    top: 50px; /* Adjust based on your header height */
+    left: 0;
+    right: 0;
+    background: var(--primary-color); /* Background for better visibility */
+    padding: var(--spacing-3);
+    border-radius: 8px; /* Rounded corners */
+    z-index: 999; /* Ensure it is on top */
+    display: none; /* Hide by default */
+  }
+
+  .nav-links.visible {
+    display: flex; /* Show when active */
+  }
+
+  .nav-links a {
+    padding: var(--spacing-2); /* Padding for touch targets */
+    text-align: center; /* Center text */
+  }
+}

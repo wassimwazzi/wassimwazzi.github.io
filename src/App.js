@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState, useEffect } from 'react';
 import About from './components/About/About';
 import Education from './components/Education/Education';
@@ -14,11 +13,12 @@ import 'aos/dist/aos.css';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('about');
+  const [menuOpen, setMenuOpen] = useState(false); // State to manage menu visibility
 
   useEffect(() => {
     AOS.init({
-      duration: 2000,  // Adjusts the overall duration of the animation
-      easing: 'ease-in-out',  // Easing for smoother transitions
+      duration: 2000,
+      easing: 'ease-in-out',
       once: true,
       offset: 100,
     });
@@ -26,8 +26,13 @@ const App = () => {
 
   const handleNavClick = (section) => {
     if (section !== activeSection) {
-      setActiveSection(section)
+      setActiveSection(section);
+      setMenuOpen(false); // Close menu on section click
     }
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev); // Toggle menu visibility
   };
 
   const renderSection = () => {
@@ -53,8 +58,11 @@ const App = () => {
         <ThemeProvider>
           <ThemeToggle />
           <div className="content">{renderSection()}</div>
-          <nav className="nav">
-            <div className="nav-links">
+          <button className="menu-toggle" onClick={toggleMenu}>
+            &#9776; {/* Hamburger icon */}
+          </button>
+          <nav className={`nav ${menuOpen ? 'open' : ''}`}>
+            <div className={`nav-links ${menuOpen ? 'visible' : ''}`}>
               {['about', 'education', 'experience', 'projects', 'skills'].map((section) => (
                 <a
                   key={section}
