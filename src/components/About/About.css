@@ -4,14 +4,23 @@
   z-index: 1;
   overflow: hidden;
   text-align: center;
+  display: flex;
 }
 
+.about-content {
+  min-height: 80vh;
+  display: flex;
+  gap: var(--spacing-3);
+  flex-direction: column;
+  justify-content: center;
+  /* padding: var(--spacing-6); */
+}
 
 @media (min-width: 768px ) {
   .about-content {
-    display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
+    align-content: center;
     /* padding: 0 var(--spacing-6); */
   }
 
@@ -21,10 +30,6 @@
   }
 }
 
-.about-content {
-  min-height: 80vh;
-  /* padding: var(--spacing-6); */
-}
 
 .about-content .title {
   opacity: 0;
