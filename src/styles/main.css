@@ -1,5 +1,6 @@
 @import './variables.css';
 @import './base.css';
+@import './nav.css';
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
 
 .app-container {
@@ -26,99 +27,13 @@
   padding: var(--spacing-1) var(--spacing-5);
 }
 
-/* Navigation Bar */
-.nav {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-links {
-  display: flex;
-  gap: var(--spacing-3);
-}
-
-.nav-links a {
-  position: relative;
-  color: var(--secondary-color);
-  text-decoration: none;
-  font-weight: 400;
-  padding-bottom: 4px;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--secondary-color);
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--secondary-color);
-  font-weight: 500;
-}
-
-.nav-links a.active {
-  color: var(--secondary-color);
-  font-weight: 600;
-}
-
-/* Styles for the mobile menu */
-.menu-toggle {
-  display: none; /* Initially hide the button */
-  background: none;
-  border: none;
-  font-size: 2rem; /* Adjust size as needed */
-  color: var(--secondary-color);
-  cursor: pointer;
-  margin: 0;
-  position: absolute; /* Position it absolutely */
-  top: 10px; /* Adjust based on your design */
-  left: 10px; /* Align to the left */
-  z-index: 1000; /* Ensure it is on top */
-}
-
-/* Show the button on small screens */
 @media (max-width: 500px) {
-  .menu-toggle {
-    display: block; /* Show the button */
+  .content {
+    margin-top: var(--spacing-5);
+    padding: 0 var(--spacing-1);
   }
 
-  .nav-links {
-    flex-direction: column; /* Stack links vertically */
-    position: absolute; /* Position the menu */
-    top: 50px; /* Adjust based on your header height */
-    left: 0;
-    right: 0;
-    background: var(--primary-color); /* Background for better visibility */
-    padding: var(--spacing-3);
-    border-radius: 8px; /* Rounded corners */
-    z-index: 999; /* Ensure it is on top */
-    display: none; /* Hide by default */
-  }
-
-  .nav-links.visible {
-    display: flex; /* Show when active */
-  }
-
-  .nav-links a {
-    padding: var(--spacing-2); /* Padding for touch targets */
-    text-align: center; /* Center text */
+  body {
+    overflow: hidden;
   }
 }

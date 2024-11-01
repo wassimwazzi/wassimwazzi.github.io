@@ -6,15 +6,7 @@
 }
 
 .scrollable-container {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     height: 100%;
-}
-
-.scrollable-container .title {
-    /* flex-basis: 10%; */
 }
 
 .scrollable-content {

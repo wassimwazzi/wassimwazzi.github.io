@@ -56,7 +56,9 @@ const App = () => {
     <div className="app-container">
       <main className="content-container">
         <ThemeProvider>
-          <ThemeToggle />
+          <div className="theme-toggle-outer">
+            <ThemeToggle />
+          </div>
           <div className="content">{renderSection()}</div>
           <button className="menu-toggle" onClick={toggleMenu}>
             &#9776; {/* Hamburger icon */}
@@ -76,6 +78,9 @@ const App = () => {
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                 </a>
               ))}
+              <div className="theme-toggle-nav">
+                <ThemeToggle />
+              </div>
             </div>
           </nav>
         </ThemeProvider>
