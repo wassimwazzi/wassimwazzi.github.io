@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import './Scrollable.css';
 import { Parallax } from 'react-parallax';
 
-const Scrollable = ({ title, children }) => {
+const Scrollable = ({ children }) => {
     const [componentIndex, setComponentIndex] = useState(0);
     const [currentComponent, setCurrentComponent] = useState(children[componentIndex]);
     const [fadeDirection, setFadeDirection] = useState('up');
-    const scrollableRef = useRef(null); // Reference for the scrollable component
-    const touchStartY = useRef(0); // Ref to track the starting touch position
+    const touchStartY = useRef(0);
+    const isTransitioning = useRef(false);
 
     useEffect(() => {
         setCurrentComponent(children[componentIndex]);
@@ -15,11 +15,11 @@ const Scrollable = ({ title, children }) => {
 
     const scrollTimeoutRef = useRef(null);
 
-    // Handle wheel or touch scroll to update the visible component
-    const handleScroll = (event) => {
-        clearTimeout(scrollTimeoutRef.current); // Clear any previous timeout
+    const handleScroll = useCallback((event) => {
+        if (isTransitioning.current) return; // Prevent scroll if transitioning
 
-        // Set a small timeout to debounce the scroll event
+        clearTimeout(scrollTimeoutRef.current);
+
         scrollTimeoutRef.current = setTimeout(() => {
             if (event.deltaY > 0 && componentIndex < children.length - 1) {
                 setComponentIndex((prevIndex) => prevIndex + 1);
@@ -28,61 +28,54 @@ const Scrollable = ({ title, children }) => {
                 setComponentIndex((prevIndex) => prevIndex - 1);
                 setFadeDirection('down');
             }
-        }, 100);
-    };
+        }, 500);
+    }, [componentIndex, children.length]);
 
-    const handleTouchStart = (event) => {
-        // Store the initial touch position
+    const handleTouchStart = useCallback((event) => {
         touchStartY.current = event.touches[0].clientY;
-    };
+    }, []);
 
-    const handleTouchMove = (event) => {
-        // Prevent the default scroll behavior
-        event.preventDefault();
-        
-        const touchCurrentY = event.touches[0].clientY;
+    const handleTouchEnd = useCallback((event) => {
+        if (isTransitioning.current) return; // Prevent scroll if transitioning
+
+        const touchCurrentY = event.changedTouches[0].clientY;
         const deltaY = touchStartY.current - touchCurrentY;
 
-        // Call the scroll handler with the deltaY value
-        if (Math.abs(deltaY) > 30) { // Threshold to prevent accidental scrolling
+        if (Math.abs(deltaY) > 30) { // Threshold for intentional scrolling
             if (deltaY > 0 && componentIndex < children.length - 1) {
+                isTransitioning.current = true;
                 setComponentIndex((prevIndex) => prevIndex + 1);
                 setFadeDirection('up');
             } else if (deltaY < 0 && componentIndex > 0) {
+                isTransitioning.current = true;
                 setComponentIndex((prevIndex) => prevIndex - 1);
                 setFadeDirection('down');
             }
+            setTimeout(() => {
+                isTransitioning.current = false;
+            }, 500); // Adjust timeout based on animation duration
         }
-    };
+    }, [componentIndex, children.length]);
 
     useEffect(() => {
-        const scrollableContainer = scrollableRef.current;
-
-        if (scrollableContainer) {
-            scrollableContainer.addEventListener("wheel", handleScroll);
-            scrollableContainer.addEventListener("touchstart", handleTouchStart);
-            scrollableContainer.addEventListener("touchmove", handleTouchMove, { passive: false }); // Use passive: false to prevent default scrolling
-        }
-
+        window.addEventListener("wheel", handleScroll);
+        window.addEventListener("touchstart", handleTouchStart);
+        window.addEventListener("touchend", handleTouchEnd);
+        
         return () => {
-            if (scrollableContainer) {
-                scrollableContainer.removeEventListener("wheel", handleScroll);
-                scrollableContainer.removeEventListener("touchstart", handleTouchStart);
-                scrollableContainer.removeEventListener("touchmove", handleTouchMove);
-            }
-            clearTimeout(scrollTimeoutRef.current);
+            window.removeEventListener("wheel", handleScroll);
+            window.removeEventListener("touchstart", handleTouchStart);
+            window.removeEventListener("touchend", handleTouchEnd);
         };
-    }, [componentIndex, children.length]);
+    }, [handleScroll, handleTouchStart, handleTouchEnd]);
 
     return (
         <Parallax strength={300} className='scrollable-parallax'>
-            <div ref={scrollableRef} className="scrollable-container fade-in">
-                {/* <h1 className="title">{title}</h1> */}
+            <div className="scrollable-container fade-in">
                 <div key={componentIndex} className="scrollable-content" data-aos={`fade-${fadeDirection}`}>
                     <div className='progress-bar'>
                         {children.map((_, index) => (
-                            <div key={index} className={`progress-point ${index <= componentIndex ? 'fill' : 'no-fill'}`}>
-                            </div>
+                            <div key={index} className={`progress-point ${index <= componentIndex ? 'fill' : 'no-fill'}`}></div>
                         ))}
                     </div>
 
