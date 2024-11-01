@@ -42,8 +42,10 @@ const Contact = () => {
       <div className="contact-content" data-aos="fade-up">
         <h2 className="contact-title">Contact Me</h2>
         <form className="contact-form" onSubmit={handleSubmit}>
-          <input type="text" name="user_name" placeholder="Name" value={formData.user_name} onChange={handleChange} required />
-          <input type="email" name="user_email" placeholder="Email" value={formData.user_email} onChange={handleChange} required />
+          <div className='form-fields'>
+            <input type="text" name="user_name" placeholder="Name" value={formData.user_name} onChange={handleChange} required />
+            <input type="email" name="user_email" placeholder="Email" value={formData.user_email} onChange={handleChange} required />
+          </div>
           <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} required></textarea>
           <button type="submit" disabled={isSubmitting || hasSubmitted}>Send Message</button>
         </form>
