@@ -4,7 +4,7 @@ import Education from './components/Education/Education';
 import Projects from './components/Projects/Projects';
 import Skills from './components/Skills/Skills';
 import Experience from './components/Experience/Experience';
-import Footer from './components/Footer/Footer';
+import Contact from './components/Contact/Contact';
 import { ThemeProvider } from './components/Theme/ThemeContext';
 import ThemeToggle from './components/Theme/ThemeToggle';
 import './styles/main.css';
@@ -47,6 +47,8 @@ const App = () => {
         return <Projects />;
       case 'skills':
         return <Skills />;
+        case 'contact':
+          return <Contact />;
       default:
         return <About />;
     }
@@ -65,7 +67,7 @@ const App = () => {
           </button>
           <nav className={`nav ${menuOpen ? 'open' : ''}`}>
             <div className={`nav-links ${menuOpen ? 'visible' : ''}`}>
-              {['about', 'education', 'experience', 'projects', 'skills'].map((section) => (
+              {['about', 'education', 'experience', 'projects', 'skills', 'contact'].map((section) => (
                 <a
                   key={section}
                   onClick={(e) => {
@@ -85,7 +87,6 @@ const App = () => {
           </nav>
         </ThemeProvider>
       </main>
-      {/* <Footer /> */}
     </div>
   );
 };

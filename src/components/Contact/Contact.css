@@ -1,48 +1,58 @@
 .contact {
-  height: 100vh; /* Full viewport height */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: black;
+  padding: var(--spacing-1);
+  overflow: scroll;
 }
 
 .contact-content {
-  padding: 40px;
-  border-radius: 10px;
-  z-index: 1;
+  min-width: 50%;
+  max-height: 100%;
 }
 
 .contact-title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.contact-description {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+  font-size: 2rem;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: var(--spacing-2);
+  max-height: 100%;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 10px;
+  padding: var(--spacing-2);
+  max-height: 100%;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
 }
 
 .contact-form button {
-  padding: 10px;
+  padding: var(--spacing-1);
   border: none;
   border-radius: 5px;
-  background-color: black;
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
   font-size: 1rem;
   cursor: pointer;
+}
+
+.contact-links {
+  margin-top: var(--spacing-4);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-2);
+}
+
+.social-link {
+  text-decoration: none;
+  font-weight: 500;
 }
