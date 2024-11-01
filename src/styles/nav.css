@@ -5,12 +5,12 @@
     justify-content: center;
     align-items: center;
 }
-  
+
 .nav-links {
     display: flex;
     gap: var(--spacing-3);
 }
-  
+
 .nav-links a {
     position: relative;
     color: var(--secondary-color);
@@ -20,7 +20,7 @@
     font-size: 1.1rem;
     transition: color 0.3s ease;
 }
-  
+
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -33,24 +33,24 @@
     transform-origin: bottom right;
     transition: transform 0.3s ease;
 }
-  
+
 .nav-links a:hover::after,
 .nav-links a.active::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-  
+
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--secondary-color);
     font-weight: 500;
 }
-  
+
 .nav-links a.active {
     color: var(--secondary-color);
     font-weight: 600;
 }
-  
+
 .menu-toggle {
     display: none; /* Initially hide the button */
     background: none;
@@ -73,50 +73,62 @@
     display: block;
 }
 
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 @media (max-width: 500px) {
     .nav {
         display: none;
     }
-
+    
     .nav.open {
         display: flex;
     }
-
+    
     .menu-toggle {
-      display: block;
+        display: block;
     }
-  
+    
     .nav-links {
-      flex-direction: column;
-      position: absolute; 
-      top: 10px;
-      left: 0;
-      right: 0;
-      height: 100vh;
-      width: 100vw;
-      background: var(--primary-color);
-      border-radius: 8px;
-      z-index: 999;
-      display: none; /* Hide by default */
+        animation: slideInLeft 1s forwards;
+        flex-direction: column;
+        position: absolute; 
+        top: 10px;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        background: var(--primary-color);
+        border-radius: 8px;
+        z-index: 999;
+        display: none; /* Hide by default */
     }
-  
+    
     .nav-links.visible {
         padding-top: var(--spacing-5);
         display: flex;
         align-items: center;
     }
-  
+    
     .nav-links a {
-      padding: var(--spacing-2);
-      text-align: center;
+        padding: var(--spacing-2);
+        text-align: center;
     }
-
+    
     .theme-toggle-nav {
         display: block;
     }
-
+    
     .theme-toggle-outer {
         display: none;
     }
 }
-  
