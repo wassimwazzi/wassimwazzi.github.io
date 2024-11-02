@@ -40,6 +40,7 @@
   max-height: 100%;
   width: 100%;
   border: none;
+  box-shadow: 0 0 1px var(--secondary-color);
   border-radius: 5px;
   font-size: 1rem;
 }
