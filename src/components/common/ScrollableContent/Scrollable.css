@@ -38,7 +38,10 @@
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    /* display: inline-block; */
+}
+
+.progress-point:hover {
+    cursor: pointer;
 }
 
 .progress-point.fill {

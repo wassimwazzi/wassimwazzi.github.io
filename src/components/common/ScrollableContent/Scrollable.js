@@ -28,7 +28,7 @@ const Scrollable = ({ children }) => {
                 setComponentIndex((prevIndex) => prevIndex - 1);
                 setFadeDirection('down');
             }
-        }, 500);
+        }, 100);
     }, [componentIndex, children.length]);
 
     const handleTouchStart = useCallback((event) => {
@@ -57,11 +57,23 @@ const Scrollable = ({ children }) => {
         }
     }, [componentIndex, children.length]);
 
+    const handleProgressPointClick = useCallback((index) => {
+        if (isTransitioning.current) return; // Prevent scroll if transitioning
+
+        clearTimeout(scrollTimeoutRef.current);
+
+        scrollTimeoutRef.current = setTimeout(() => {
+            setComponentIndex(index);
+            const fadeDirection = index > componentIndex ? 'up' : 'down'
+            setFadeDirection(fadeDirection);
+        }, 100);
+    }, [componentIndex])
+
     useEffect(() => {
         window.addEventListener("wheel", handleScroll);
         window.addEventListener("touchstart", handleTouchStart);
         window.addEventListener("touchend", handleTouchEnd);
-        
+
         return () => {
             window.removeEventListener("wheel", handleScroll);
             window.removeEventListener("touchstart", handleTouchStart);
@@ -75,7 +87,11 @@ const Scrollable = ({ children }) => {
                 <div key={componentIndex} className="scrollable-content" data-aos={`fade-${fadeDirection}`}>
                     <div className='progress-bar'>
                         {children.map((_, index) => (
-                            <div key={index} className={`progress-point ${index <= componentIndex ? 'fill' : 'no-fill'}`}></div>
+                            <div
+                                key={index}
+                                className={`progress-point ${index <= componentIndex ? 'fill' : 'no-fill'}`}
+                                onClick={() => handleProgressPointClick(index)}
+                            />
                         ))}
                     </div>
 
