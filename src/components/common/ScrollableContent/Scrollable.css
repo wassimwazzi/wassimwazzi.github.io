@@ -8,12 +8,7 @@
 .scrollable-container {
     height: 100%;
     display: flex;
-}
-
-@media screen and (min-height: 800px), screen and (min-width: 500px) {
-    .scrollable-container {
-        align-items: center;
-    }
+    align-items: center;
 }
 
 .scrollable-content {

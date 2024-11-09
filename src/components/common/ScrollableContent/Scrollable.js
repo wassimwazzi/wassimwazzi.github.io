@@ -89,6 +89,7 @@ const Scrollable = ({ children }) => {
                         {children.map((_, index) => (
                             <div
                                 key={index}
+                                
                                 className={`progress-point ${index <= componentIndex ? 'fill' : 'no-fill'}`}
                                 onClick={() => handleProgressPointClick(index)}
                             />
