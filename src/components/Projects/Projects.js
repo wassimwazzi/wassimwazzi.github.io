@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Scrollable from '../common/ScrollableContent/Scrollable';
 import Card from '../common/Card/Card';
 import { useTheme } from '../Theme/ThemeContext';
@@ -56,49 +56,127 @@ const PROJECT_ITEMS = [
 
 const Projects = () => {
   const { isLight } = useTheme();
+  const [overlayImage, setOverlayImage] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentProjectImages, setCurrentProjectImages] = useState([]);
+
+  const openOverlay = (images, index) => {
+    console.log('open overlay', images, index)
+    setCurrentProjectImages(images);
+    setCurrentImageIndex(index);
+    setOverlayImage(images[index]);
+  };
+
+  const closeOverlay = () => {
+    setOverlayImage(null);
+    setCurrentImageIndex(0);
+    setCurrentProjectImages([]);
+  };
+
+  const canToggle = useCallback((direction) => {
+    if (direction === 'right') {
+      return currentImageIndex < currentProjectImages.length - 1;
+    }
+    return currentImageIndex > 0
+  }, [currentImageIndex, currentProjectImages.length])
+
+  const toggleImage = useCallback((direction) => {
+    if (!canToggle(direction)) return;
+    if (direction === 'right') {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1));
+    } else {
+      setCurrentImageIndex((prevIndex) => (prevIndex - 1));
+    }
+  }, [canToggle]);
+
+  const handleKeyDown = useCallback((event) => {
+    if (!overlayImage) return;
+    if (event.key === 'ArrowRight') {
+      toggleImage('right')
+    } else if (event.key === 'ArrowLeft') {
+      toggleImage('left');
+    } else if (event.key === 'Escape') {
+      closeOverlay();
+    }
+  }, [overlayImage, toggleImage]);
+
+  useEffect(() => {
+    if (overlayImage) {
+      document.addEventListener('keydown', handleKeyDown);
+      return () => document.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [overlayImage, currentProjectImages, handleKeyDown]);
+
+  useEffect(() => {
+    console.log("HERE", currentImageIndex, overlayImage, currentImageIndex)
+    if (currentProjectImages.length > 0) {
+      setOverlayImage(currentProjectImages[currentImageIndex]);
+    }
+  }, [currentImageIndex, currentProjectImages, overlayImage]);
 
   return (
-    <Scrollable>
-      {PROJECT_ITEMS.map((project, index) => (
-        <Card key={index}>
-          <div className="project-item">
-            <div className='project-content'>
-              <div className="project-title">
-                <h3>{project.title}</h3>
-                {project.link && <div className="project-link">
-                  <img src={project.link.image || ''} style={{ width: '50px' }} />
-                  <a href={project.link.link} target="_blank" rel="noopener noreferrer">Give it a try!</a>
-                </div>}
-                <div className="github-link">
-                  <img src={`./github-${isLight() ? 'light' : 'dark'}.png`} style={{ width: '50px' }} alt="github" />
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">Read the code!</a>
+    <>
+      <Scrollable>
+        {PROJECT_ITEMS.map((project, index) => (
+          <Card key={index}>
+            <div className="project-item">
+              <div className='project-content'>
+                <div className="project-title">
+                  <h3>{project.title}</h3>
+                  {project.link && <div className="project-link">
+                    <img src={project.link.image || ''} style={{ width: '50px' }} alt='' />
+                    <a href={project.link.link} target="_blank" rel="noopener noreferrer">Give it a try!</a>
+                  </div>}
+                  <div className="github-link">
+                    <img src={`./github-${isLight() ? 'light' : 'dark'}.png`} style={{ width: '50px' }} alt="github" />
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">Read the code!</a>
+                  </div>
+                </div>
+                <div className="project-details-container">
+                  <div className="project-details">
+                    {project.details.map((detail, i) => (
+                      <p key={i}>{detail}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
-              <div className="project-details-container">
-                <div className="project-details">
-                  {project.details.map((detail, i) => (
-                    <p key={i}>{detail}</p>
-                  ))}
-                </div>
-              </div>
-            </div>
-            {project.images && (
-              <div className="project-images">
-                {project.images.map((image, i) => (
-                  <a href={image} target="_blank" rel="noopener noreferrer" key={i}>
+              {project.images && (
+                <div className="project-images">
+                  {project.images.map((image, i) => (
                     <img
                       src={image}
-                      alt={`${project.title} screenshot ${i + 1}`}
+                      alt=''
                       className="clickable-image"
+                      onClick={() => openOverlay(project.images, i)}
+                      key={i}
                     />
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
-        </Card>
-      ))}
-    </Scrollable>
+                  ))}
+                </div>
+              )}
+            </div>
+          </Card>
+        ))}
+      </Scrollable>
+
+      {overlayImage && (
+        <div className="overlay">
+          <span className="close-button" onClick={closeOverlay}>&times;</span>
+          <img src={overlayImage} alt="Project screenshot" className="overlay-image" />
+          <button
+            className={`arrow left-arrow ${canToggle('left') || 'disabled'}`}
+            onClick={() => toggleImage('left')}
+          >
+            &#10094;
+          </button>
+          <button
+            className={`arrow right-arrow ${canToggle('right') || 'disabled'}`}
+            onClick={() => toggleImage('right')}
+          >
+            &#10095;
+          </button>
+        </div>
+      )}
+    </>
   );
 };
 
