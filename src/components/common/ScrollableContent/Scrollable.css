@@ -1,53 +1,33 @@
-.scrollable-parallax {
-    height: 100%;
-}
-.scrollable-parallax .react-parallax-content {
-    height: 100%;
-}
-
-.scrollable-container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.scrollable-content {
-    display: flex;
-    flex:1;
-    gap: var(--spacing-2);
-    justify-content: space-between;
-    position: relative;
-}
-
-.current-component {
-    flex: 4;
-}
-
-.fade-in {
-    animation: fadeIn 3s ease-in-out forwards;
-}
-
-.scrollable-container .progress-bar {
+.scrollable-content-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: var(--spacing-2);
-}
-
-.progress-point {
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-}
-
-.progress-point:hover {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .scrollable-content-titles {
+    display: flex;
+    justify-content: space-around;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .tab-title {
     cursor: pointer;
-}
-
-.progress-point.fill {
-    background: var(--highlight-color);
-}
-
-.progress-point.no-fill {
-    background-color: #bbb;
-}
+    padding: 10px 20px;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+  }
+  
+  .tab-title.active {
+    color: white;
+    background-color: #007bff;
+  }
+  
+  .scrollable-content-display {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: white;
+  }
+  

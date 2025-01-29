@@ -75,7 +75,8 @@ const EXPERIENCE_ITEMS = [
 
 const Experience = () => {
     return (
-        <Scrollable>
+        <Scrollable
+        titles={["Overview", "Details", "Features", "Specifications"]}>
             {EXPERIENCE_ITEMS.map((item, index) => (
                 <Card key={index}>
                     <div className="experience-item">
